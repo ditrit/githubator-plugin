@@ -5,12 +5,13 @@ module.exports = {
   entry: path.resolve(__dirname, 'src/index.js'),
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: 'my-plugin.js',
+    filename: 'githubator-plugin.js',
     libraryTarget: 'commonjs',
   },
   resolve: {
     alias: {
       src: path.resolve(__dirname, 'src/'),
+      'package.json': path.resolve(__dirname, 'package.json'),
     },
     extensions: ['.js'],
   },
