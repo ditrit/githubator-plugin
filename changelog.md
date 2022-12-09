@@ -9,5 +9,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Setup GitHub workflow
-- Setup default plugin structure
+- Setup GitHub workflow.
+- Setup default plugin structure.
+- Setup first version of metadata.
