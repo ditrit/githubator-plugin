@@ -1,0 +1,20 @@
+[{
+  "type": "step",
+  "icon": "CommandStep",
+  "name": "command-step",
+  "attributes": [{
+    "name": "run",
+    "type": "String"
+  }]
+}, {
+  "type": "step",
+  "icon": "ReusableStep",
+  "name": "reusable-step",
+  "attributes": [{
+    "name": "uses",
+    "type": "String"
+  }, {
+    "name": "with",
+    "type": "Object"
+  }]
+}]
