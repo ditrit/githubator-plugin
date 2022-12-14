@@ -1,0 +1,653 @@
+[
+  {
+    "type": "workflow",
+    "icon": "DefaultWorkflow",
+    "model": "DefaultContainer",
+    "isContainer": true,
+    "available": true,
+    "parentTypes": [],
+    "childrenTypes": [
+      "trigger",
+      "job"
+    ],
+    "definedAttributes": []
+  },
+  {
+    "type": "job",
+    "icon": "DefaultJob",
+    "model": "DefaultContainer",
+    "isContainer": false,
+    "available": true,
+    "parentTypes": [
+      "workflow"
+    ],
+    "childrenTypes": [
+      "step"
+    ],
+    "definedAttributes": [
+      {
+        "name": "workflow_id",
+        "type": "Reference",
+        "linkType": null,
+        "linkRef": [],
+        "linkColor": "black",
+        "linkWidth": 2,
+        "linkDashStyle": null,
+        "containerRef": "workflow",
+        "definedAttributes": [],
+        "required": false,
+        "rules": {
+          "values": null,
+          "min": null,
+          "max": null,
+          "regex": null
+        }
+      },
+      {
+        "name": "name",
+        "type": "String",
+        "linkType": null,
+        "linkRef": [],
+        "linkColor": "black",
+        "linkWidth": 2,
+        "linkDashStyle": null,
+        "containerRef": [],
+        "definedAttributes": [],
+        "required": false,
+        "rules": {
+          "values": null,
+          "min": null,
+          "max": null,
+          "regex": null
+        }
+      },
+      {
+        "name": "runs-on",
+        "type": "String",
+        "linkType": null,
+        "linkRef": [],
+        "linkColor": "black",
+        "linkWidth": 2,
+        "linkDashStyle": null,
+        "containerRef": [],
+        "definedAttributes": [],
+        "required": false,
+        "rules": {
+          "values": null,
+          "min": null,
+          "max": null,
+          "regex": null
+        }
+      },
+      {
+        "name": "first_step",
+        "type": "Link",
+        "linkType": "Default",
+        "linkRef": "step",
+        "linkColor": "black",
+        "linkWidth": 2,
+        "linkDashStyle": null,
+        "containerRef": [],
+        "definedAttributes": [],
+        "required": false,
+        "rules": {
+          "values": null,
+          "min": null,
+          "max": null,
+          "regex": null
+        }
+      }
+    ]
+  },
+  {
+    "type": "step",
+    "icon": "DefaultStep",
+    "model": "DefaultModel",
+    "isContainer": false,
+    "available": true,
+    "parentTypes": [
+      "job"
+    ],
+    "childrenTypes": [],
+    "definedAttributes": [
+      {
+        "name": "name",
+        "type": "String",
+        "linkType": null,
+        "linkRef": [],
+        "linkColor": "black",
+        "linkWidth": 2,
+        "linkDashStyle": null,
+        "containerRef": [],
+        "definedAttributes": [],
+        "required": false,
+        "rules": {
+          "values": null,
+          "min": null,
+          "max": null,
+          "regex": null
+        }
+      },
+      {
+        "name": "job_id",
+        "type": "Reference",
+        "linkType": null,
+        "linkRef": [],
+        "linkColor": "black",
+        "linkWidth": 2,
+        "linkDashStyle": null,
+        "containerRef": "job",
+        "definedAttributes": [],
+        "required": false,
+        "rules": {
+          "values": null,
+          "min": null,
+          "max": null,
+          "regex": null
+        }
+      },
+      {
+        "name": "next_step",
+        "type": "Link",
+        "linkType": "Default",
+        "linkRef": "step",
+        "linkColor": "black",
+        "linkWidth": 2,
+        "linkDashStyle": null,
+        "containerRef": [],
+        "definedAttributes": [],
+        "required": false,
+        "rules": {
+          "values": null,
+          "min": null,
+          "max": null,
+          "regex": null
+        }
+      },
+      {
+        "name": "env",
+        "type": "Object",
+        "linkType": null,
+        "linkRef": [],
+        "linkColor": "black",
+        "linkWidth": 2,
+        "linkDashStyle": null,
+        "containerRef": [],
+        "definedAttributes": [],
+        "required": false,
+        "rules": {
+          "values": null,
+          "min": null,
+          "max": null,
+          "regex": null
+        }
+      },
+      {
+        "name": "run",
+        "type": "String",
+        "linkType": null,
+        "linkRef": [],
+        "linkColor": "black",
+        "linkWidth": 2,
+        "linkDashStyle": null,
+        "containerRef": [],
+        "definedAttributes": [],
+        "required": false,
+        "rules": {
+          "values": null,
+          "min": null,
+          "max": null,
+          "regex": null
+        }
+      },
+      {
+        "name": "uses",
+        "type": "String",
+        "linkType": null,
+        "linkRef": [],
+        "linkColor": "black",
+        "linkWidth": 2,
+        "linkDashStyle": null,
+        "containerRef": [],
+        "definedAttributes": [],
+        "required": false,
+        "rules": {
+          "values": null,
+          "min": null,
+          "max": null,
+          "regex": null
+        }
+      },
+      {
+        "name": "with",
+        "type": "Object",
+        "linkType": null,
+        "linkRef": [],
+        "linkColor": "black",
+        "linkWidth": 2,
+        "linkDashStyle": null,
+        "containerRef": [],
+        "definedAttributes": [],
+        "required": false,
+        "rules": {
+          "values": null,
+          "min": null,
+          "max": null,
+          "regex": null
+        }
+      }
+    ]
+  },
+  {
+    "type": "trigger",
+    "icon": "PushTrigger",
+    "model": "DefaultModel",
+    "isContainer": false,
+    "action": "push",
+    "parentTypes": [
+      "workflow"
+    ],
+    "childrenTypes": [],
+    "definedAttributes": [
+      {
+        "name": "workflow_id",
+        "type": "Reference",
+        "linkType": null,
+        "linkRef": [],
+        "linkColor": "black",
+        "linkWidth": 2,
+        "linkDashStyle": null,
+        "containerRef": "workflow",
+        "definedAttributes": [],
+        "required": true,
+        "rules": {
+          "values": null,
+          "min": null,
+          "max": null,
+          "regex": null
+        }
+      },
+      {
+        "name": "branches",
+        "type": "Array",
+        "linkType": null,
+        "linkRef": [],
+        "linkColor": "black",
+        "linkWidth": 2,
+        "linkDashStyle": null,
+        "containerRef": [],
+        "definedAttributes": [],
+        "required": false,
+        "rules": {
+          "values": null,
+          "min": null,
+          "max": null,
+          "regex": null
+        }
+      },
+      {
+        "name": "types",
+        "type": "Array",
+        "linkType": null,
+        "linkRef": [],
+        "linkColor": "black",
+        "linkWidth": 2,
+        "linkDashStyle": null,
+        "containerRef": [],
+        "definedAttributes": [],
+        "required": false,
+        "rules": {
+          "values": null,
+          "min": null,
+          "max": null,
+          "regex": null
+        }
+      }
+    ]
+  },
+  {
+    "type": "trigger",
+    "icon": "PullRequestTrigger",
+    "model": "DefaultModel",
+    "isContainer": false,
+    "action": "pull_request",
+    "parentTypes": [
+      "workflow"
+    ],
+    "childrenTypes": [],
+    "definedAttributes": [
+      {
+        "name": "workflow_id",
+        "type": "Reference",
+        "linkType": null,
+        "linkRef": [],
+        "linkColor": "black",
+        "linkWidth": 2,
+        "linkDashStyle": null,
+        "containerRef": "workflow",
+        "definedAttributes": [],
+        "required": true,
+        "rules": {
+          "values": null,
+          "min": null,
+          "max": null,
+          "regex": null
+        }
+      },
+      {
+        "name": "branches",
+        "type": "Array",
+        "linkType": null,
+        "linkRef": [],
+        "linkColor": "black",
+        "linkWidth": 2,
+        "linkDashStyle": null,
+        "containerRef": [],
+        "definedAttributes": [],
+        "required": false,
+        "rules": {
+          "values": null,
+          "min": null,
+          "max": null,
+          "regex": null
+        }
+      },
+      {
+        "name": "types",
+        "type": "Array",
+        "linkType": null,
+        "linkRef": [],
+        "linkColor": "black",
+        "linkWidth": 2,
+        "linkDashStyle": null,
+        "containerRef": [],
+        "definedAttributes": [],
+        "required": false,
+        "rules": {
+          "values": null,
+          "min": null,
+          "max": null,
+          "regex": null
+        }
+      }
+    ]
+  },
+  {
+    "type": "step",
+    "icon": "CommandStep",
+    "model": "DefaultModel",
+    "isContainer": false,
+    "name": "command-step",
+    "parentTypes": [
+      "job"
+    ],
+    "childrenTypes": [],
+    "definedAttributes": [
+      {
+        "name": "name",
+        "type": "String",
+        "linkType": null,
+        "linkRef": [],
+        "linkColor": "black",
+        "linkWidth": 2,
+        "linkDashStyle": null,
+        "containerRef": [],
+        "definedAttributes": [],
+        "required": false,
+        "rules": {
+          "values": null,
+          "min": null,
+          "max": null,
+          "regex": null
+        }
+      },
+      {
+        "name": "job_id",
+        "type": "Reference",
+        "linkType": null,
+        "linkRef": [],
+        "linkColor": "black",
+        "linkWidth": 2,
+        "linkDashStyle": null,
+        "containerRef": "job",
+        "definedAttributes": [],
+        "required": false,
+        "rules": {
+          "values": null,
+          "min": null,
+          "max": null,
+          "regex": null
+        }
+      },
+      {
+        "name": "next_step",
+        "type": "Link",
+        "linkType": "Default",
+        "linkRef": "step",
+        "linkColor": "black",
+        "linkWidth": 2,
+        "linkDashStyle": null,
+        "containerRef": [],
+        "definedAttributes": [],
+        "required": false,
+        "rules": {
+          "values": null,
+          "min": null,
+          "max": null,
+          "regex": null
+        }
+      },
+      {
+        "name": "env",
+        "type": "Object",
+        "linkType": null,
+        "linkRef": [],
+        "linkColor": "black",
+        "linkWidth": 2,
+        "linkDashStyle": null,
+        "containerRef": [],
+        "definedAttributes": [],
+        "required": false,
+        "rules": {
+          "values": null,
+          "min": null,
+          "max": null,
+          "regex": null
+        }
+      },
+      {
+        "name": "run",
+        "type": "String",
+        "linkType": null,
+        "linkRef": [],
+        "linkColor": "black",
+        "linkWidth": 2,
+        "linkDashStyle": null,
+        "containerRef": [],
+        "definedAttributes": [],
+        "required": false,
+        "rules": {
+          "values": null,
+          "min": null,
+          "max": null,
+          "regex": null
+        }
+      },
+      {
+        "name": "uses",
+        "type": "String",
+        "linkType": null,
+        "linkRef": [],
+        "linkColor": "black",
+        "linkWidth": 2,
+        "linkDashStyle": null,
+        "containerRef": [],
+        "definedAttributes": [],
+        "required": false,
+        "rules": {
+          "values": null,
+          "min": null,
+          "max": null,
+          "regex": null
+        }
+      },
+      {
+        "name": "with",
+        "type": "Object",
+        "linkType": null,
+        "linkRef": [],
+        "linkColor": "black",
+        "linkWidth": 2,
+        "linkDashStyle": null,
+        "containerRef": [],
+        "definedAttributes": [],
+        "required": false,
+        "rules": {
+          "values": null,
+          "min": null,
+          "max": null,
+          "regex": null
+        }
+      }
+    ]
+  },
+  {
+    "type": "step",
+    "icon": "ReusableStep",
+    "model": "DefaultModel",
+    "isContainer": false,
+    "name": "reusable-step",
+    "parentTypes": [
+      "job"
+    ],
+    "childrenTypes": [],
+    "definedAttributes": [
+      {
+        "name": "name",
+        "type": "String",
+        "linkType": null,
+        "linkRef": [],
+        "linkColor": "black",
+        "linkWidth": 2,
+        "linkDashStyle": null,
+        "containerRef": [],
+        "definedAttributes": [],
+        "required": false,
+        "rules": {
+          "values": null,
+          "min": null,
+          "max": null,
+          "regex": null
+        }
+      },
+      {
+        "name": "job_id",
+        "type": "Reference",
+        "linkType": null,
+        "linkRef": [],
+        "linkColor": "black",
+        "linkWidth": 2,
+        "linkDashStyle": null,
+        "containerRef": "job",
+        "definedAttributes": [],
+        "required": false,
+        "rules": {
+          "values": null,
+          "min": null,
+          "max": null,
+          "regex": null
+        }
+      },
+      {
+        "name": "next_step",
+        "type": "Link",
+        "linkType": "Default",
+        "linkRef": "step",
+        "linkColor": "black",
+        "linkWidth": 2,
+        "linkDashStyle": null,
+        "containerRef": [],
+        "definedAttributes": [],
+        "required": false,
+        "rules": {
+          "values": null,
+          "min": null,
+          "max": null,
+          "regex": null
+        }
+      },
+      {
+        "name": "env",
+        "type": "Object",
+        "linkType": null,
+        "linkRef": [],
+        "linkColor": "black",
+        "linkWidth": 2,
+        "linkDashStyle": null,
+        "containerRef": [],
+        "definedAttributes": [],
+        "required": false,
+        "rules": {
+          "values": null,
+          "min": null,
+          "max": null,
+          "regex": null
+        }
+      },
+      {
+        "name": "run",
+        "type": "String",
+        "linkType": null,
+        "linkRef": [],
+        "linkColor": "black",
+        "linkWidth": 2,
+        "linkDashStyle": null,
+        "containerRef": [],
+        "definedAttributes": [],
+        "required": false,
+        "rules": {
+          "values": null,
+          "min": null,
+          "max": null,
+          "regex": null
+        }
+      },
+      {
+        "name": "uses",
+        "type": "String",
+        "linkType": null,
+        "linkRef": [],
+        "linkColor": "black",
+        "linkWidth": 2,
+        "linkDashStyle": null,
+        "containerRef": [],
+        "definedAttributes": [],
+        "required": false,
+        "rules": {
+          "values": null,
+          "min": null,
+          "max": null,
+          "regex": null
+        }
+      },
+      {
+        "name": "with",
+        "type": "Object",
+        "linkType": null,
+        "linkRef": [],
+        "linkColor": "black",
+        "linkWidth": 2,
+        "linkDashStyle": null,
+        "containerRef": [],
+        "definedAttributes": [],
+        "required": false,
+        "rules": {
+          "values": null,
+          "min": null,
+          "max": null,
+          "regex": null
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,17 @@
+[{
+  "type": "trigger",
+  "icon": "PushTrigger",
+  "action": "push",
+  "attributes": [{
+    "name": "branches",
+    "type": "Array"
+  }]
+}, {
+  "type": "trigger",
+  "icon": "PullRequestTrigger",
+  "action": "pull_request",
+  "attributes": [{
+    "name": "types",
+    "type": "Array"
+  }]
+}]
