@@ -87,11 +87,11 @@ export default [
       name: 'with',
       value: [new ComponentAttribute({
         name: 'regex',
-        value: '^(feature|bugfix|improvement|library|prerelease|release|hotfix)\\/[a-z0-9_.-]+$',
+        value: "'^(feature|bugfix|improvement|library|prerelease|release|hotfix)\\/[a-z0-9_.-]+$'",
         type: 'String',
       }), new ComponentAttribute({
         name: 'allowed_prefixes',
-        value: 'feature,bugfix,improvement,library,prerelease,release,hotfix',
+        value: "'feature,bugfix,improvement,library,prerelease,release,hotfix'",
         type: 'String',
       }), new ComponentAttribute({
         name: 'ignore',
