@@ -10,6 +10,18 @@ npm run build
 
 ## Development
 
+### Improve grammar
+
+Githubator-plugin use [lidy-js](https://github.com/ditrit/lidy-js) as yaml parser.
+
+Grammar are store in `src/lidy/github.yml`.
+
+To generate parser from your grammar you can use this command:
+
+```
+npm run generate:parser
+```
+
 ### How to release
 
 We use [Semantic Versioning](https://semver.org/spec/v2.0.0.html) as guideline for the version management.

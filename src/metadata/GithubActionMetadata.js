@@ -36,6 +36,8 @@ class GithubActionMetadata extends DefaultMetadata {
     // Generic workflow
     generics.push(new GenericComponentDefinition({
       ...metadata.generic.workflow,
+      definedAttributes: metadata.generic.workflow.attributes
+        .map((attribute) => new ComponentAttributeDefinition({ ...attribute })),
     }));
 
     // Generic trigger
@@ -74,15 +76,21 @@ class GithubActionMetadata extends DefaultMetadata {
       .filter((key) => key !== 'generic')
       .flatMap((key) => metadata[key])
       .forEach((data) => {
+        const generic = generics.find(({ type }) => type === data.type);
+
         let definition = null;
 
         if (data.type === 'trigger') {
           definition = new TriggerDefinition({
-            ...generics.find((def) => def.type === data.type),
+            ...generics,
+            definedAttributes: generic.definedAttributes
+              .map((attribute) => new ComponentAttributeDefinition(attribute)),
           });
         } else {
           definition = new ComponentDefinition({
-            ...generics.find((def) => def.type === data.type),
+            ...generics,
+            definedAttributes: generic.definedAttributes
+              .map((attribute) => new ComponentAttributeDefinition(attribute)),
           });
         }
 
