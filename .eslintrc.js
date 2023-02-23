@@ -24,7 +24,12 @@ module.exports = {
     chrome: 'readonly',
   },
 
-  ignorePatterns: ['dist/*', 'src/assets/index.js'],
+  ignorePatterns: [
+    'docs/*',
+    'dist/*',
+    'src/assets/index.js',
+    'src/lidy/*',
+  ],
   // add your custom rules here
   rules: {
     'linebreak-style': ['error', 'unix'],
