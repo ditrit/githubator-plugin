@@ -3,9 +3,19 @@
     "type": "workflow",
     "model": "DefaultContainer",
     "icon": "DefaultWorkflow",
-    "childrenTypes": ["trigger", "job"],
+    "childrenTypes": [
+      "trigger",
+      "job"
+    ],
     "isContainer": true,
-    "available": true
+    "available": true,
+    "attributes": [
+      {
+        "name": "name",
+        "type": "String",
+        "required": true
+      }
+    ]
   },
   "trigger": {
     "type": "trigger",
@@ -15,60 +25,78 @@
     "parentTypes": [
       "workflow"
     ],
-    "attributes": [{
-      "name": "workflow_id",
-      "type": "Reference",
-      "containerRef": "workflow",
-      "required": true
-    }]
+    "attributes": [
+      {
+        "name": "workflow_id",
+        "type": "Reference",
+        "containerRef": "workflow",
+        "required": true
+      }
+    ]
   },
   "job": {
     "type": "job",
     "model": "DefaultContainer",
     "icon": "DefaultJob",
     "available": true,
-    "parentTypes": ["workflow"],
-    "childrenTypes": ["step"],
-    "attributes": [{
-      "name": "workflow_id",
-      "type": "Reference",
-      "containerRef": "workflow"
-    }, {
-      "name": "name",
-      "type": "String"
-    }, {
-      "name": "runs-on",
-      "type": "String"
-    }, {
-      "name": "first_step",
-      "type": "Link",
-      "linkType": "Default",
-      "linkRef": "step"
-    }]
+    "parentTypes": [
+      "workflow"
+    ],
+    "childrenTypes": [
+      "step"
+    ],
+    "attributes": [
+      {
+        "name": "workflow_id",
+        "type": "Reference",
+        "containerRef": "workflow",
+        "required": true
+      },
+      {
+        "name": "name",
+        "type": "String"
+      },
+      {
+        "name": "runs-on",
+        "type": "String"
+      },
+      {
+        "name": "needs",
+        "type": "Link",
+        "linkType": "Reverse",
+        "linkRef": "job"
+      }
+    ]
   },
   "step": {
     "type": "step",
     "model": "DefaultModel",
     "icon": "DefaultStep",
     "available": true,
-    "parentTypes": ["job"],
-    "attributes": [{
-      "name": "name",
-      "type": "String"
-    },{
-      "name": "job_id",
-      "type": "Reference",
-      "containerRef": "job"
-    }, {
-      "name": "next_step",
-      "type": "Link",
-      "linkType": "Default",
-      "linkRef": "step"
-    }, {
-      "name": "env",
-      "type": "Object"
-    }]
+    "parentTypes": [
+      "job"
+    ],
+    "attributes": [
+      {
+        "name": "workflow_id",
+        "type": "Reference",
+        "containerRef": "workflow",
+        "required": true
+      },
+      {
+        "name": "job_id",
+        "type": "Reference",
+        "containerRef": "job",
+        "required": true
+      },
+      {
+        "name": "name",
+        "type": "String"
+      },
+      {
+        "name": "env",
+        "type": "Object"
+      }
+    ]
   }
 }
-
-
