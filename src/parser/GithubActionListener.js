@@ -313,19 +313,11 @@ class GithubActionListener {
   }
 
   enter_StepMapValue(ctx) {
-    if (Number.isInteger(ctx.value)) {
-      this.currentStepAttribute.value.push(new ComponentAttribute({
-        name: this.currentKey,
-        value: parseInt(ctx.value, 10),
-        type: 'Number',
-      }));
-    } else {
-      this.currentStepAttribute.value.push(new ComponentAttribute({
-        name: this.currentKey,
-        value: ctx.value,
-        type: 'String',
-      }));
-    }
+    this.currentStepAttribute.value.push(new ComponentAttribute({
+      name: this.currentKey,
+      value: ctx.type === 'QUOTE_SINGLE' ? `'${ctx.value}'` : ctx.value,
+      type: Number.isInteger(ctx.value) ? 'Number' : 'String',
+    }));
 
     this.currentKey = null;
   }
