@@ -13,3 +13,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Setup default plugin structure.
 - Setup first version of metadata.
 - Setup first version of parser.
+- Setup first version of renderer.
