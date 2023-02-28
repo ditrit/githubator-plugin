@@ -82,13 +82,13 @@ class GithubActionMetadata extends DefaultMetadata {
 
         if (data.type === 'trigger') {
           definition = new TriggerDefinition({
-            ...generics,
+            ...generic,
             definedAttributes: generic.definedAttributes
               .map((attribute) => new ComponentAttributeDefinition(attribute)),
           });
         } else {
           definition = new ComponentDefinition({
-            ...generics,
+            ...generic,
             definedAttributes: generic.definedAttributes
               .map((attribute) => new ComponentAttributeDefinition(attribute)),
           });

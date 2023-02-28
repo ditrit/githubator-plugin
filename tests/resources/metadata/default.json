@@ -2,7 +2,10 @@
   {
     "type": "workflow",
     "icon": "DefaultWorkflow",
-    "model": "DefaultContainer",
+    "model": "workflow",
+    "displayName": "Workflow",
+    "description": "A workflow is a configurable automated process that will run one or more jobs.<br/><br/>Workflows are defined by a YAML file checked in to your repository and will run when triggered by an event in your repository, or they can be triggered manually, or at a defined schedule.",
+    "url": "https://docs.github.com/en/actions/using-workflows/about-workflows",
     "parentTypes": [],
     "childrenTypes": [
       "trigger",
@@ -12,12 +15,15 @@
       {
         "name": "name",
         "type": "String",
+        "displayName": null,
+        "description": "The name of the workflow as it will appear in the \"Actions\" tab of the GitHub repository.",
+        "url": "https://docs.github.com/en/actions/using-workflows/about-workflows#understanding-the-workflow-file",
         "linkType": null,
         "linkRef": [],
         "linkColor": "black",
         "linkWidth": 2,
         "linkDashStyle": null,
-        "containerRef": [],
+        "containerRef": null,
         "definedAttributes": [],
         "required": true,
         "rules": {
@@ -29,12 +35,18 @@
       }
     ],
     "isContainer": true,
+    "displayType": null,
+    "preventChildrenMovement": false,
+    "childrenPerLine": null,
     "available": true
   },
   {
     "type": "job",
     "icon": "DefaultJob",
-    "model": "DefaultContainer",
+    "model": "job",
+    "displayName": "Job",
+    "description": "A workflow run is made up of one or more jobs, which run in parallel by default.",
+    "url": "https://docs.github.com/en/actions/using-jobs/using-jobs-in-a-workflow",
     "parentTypes": [
       "workflow"
     ],
@@ -45,6 +57,9 @@
       {
         "name": "workflow_id",
         "type": "Reference",
+        "displayName": "Id of workflow",
+        "description": null,
+        "url": null,
         "linkType": null,
         "linkRef": [],
         "linkColor": "black",
@@ -63,12 +78,15 @@
       {
         "name": "name",
         "type": "String",
+        "displayName": null,
+        "description": "The name of the job as it will appear in the \"Actions\" tab of the GitHub repository.",
+        "url": "https://docs.github.com/en/actions/using-jobs/using-jobs-in-a-workflow#setting-a-name-for-a-job",
         "linkType": null,
         "linkRef": [],
         "linkColor": "black",
         "linkWidth": 2,
         "linkDashStyle": null,
-        "containerRef": [],
+        "containerRef": null,
         "definedAttributes": [],
         "required": false,
         "rules": {
@@ -81,12 +99,15 @@
       {
         "name": "runs-on",
         "type": "String",
+        "displayName": "Type of runner",
+        "description": "The type of machine to run the job on.",
+        "url": "https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idruns-on",
         "linkType": null,
         "linkRef": [],
         "linkColor": "black",
         "linkWidth": 2,
         "linkDashStyle": null,
-        "containerRef": [],
+        "containerRef": null,
         "definedAttributes": [],
         "required": false,
         "rules": {
@@ -99,12 +120,15 @@
       {
         "name": "needs",
         "type": "Link",
+        "displayName": "Previous job(s)",
+        "description": "Identify any jobs that must complete successfully before this job will run",
+        "url": "https://docs.github.com/en/actions/using-jobs/using-jobs-in-a-workflow#defining-prerequisite-jobs",
         "linkType": "Reverse",
         "linkRef": "job",
         "linkColor": "black",
         "linkWidth": 2,
         "linkDashStyle": null,
-        "containerRef": [],
+        "containerRef": null,
         "definedAttributes": [],
         "required": false,
         "rules": {
@@ -115,104 +139,30 @@
         }
       }
     ],
-    "isContainer": false,
-    "available": true
-  },
-  {
-    "type": "step",
-    "icon": "DefaultStep",
-    "model": "DefaultModel",
-    "parentTypes": [
-      "job"
-    ],
-    "childrenTypes": [],
-    "definedAttributes": [
-      {
-        "name": "workflow_id",
-        "type": "Reference",
-        "linkType": null,
-        "linkRef": [],
-        "linkColor": "black",
-        "linkWidth": 2,
-        "linkDashStyle": null,
-        "containerRef": "workflow",
-        "definedAttributes": [],
-        "required": true,
-        "rules": {
-          "values": null,
-          "min": null,
-          "max": null,
-          "regex": null
-        }
-      },
-      {
-        "name": "job_id",
-        "type": "Reference",
-        "linkType": null,
-        "linkRef": [],
-        "linkColor": "black",
-        "linkWidth": 2,
-        "linkDashStyle": null,
-        "containerRef": "job",
-        "definedAttributes": [],
-        "required": true,
-        "rules": {
-          "values": null,
-          "min": null,
-          "max": null,
-          "regex": null
-        }
-      },
-      {
-        "name": "name",
-        "type": "String",
-        "linkType": null,
-        "linkRef": [],
-        "linkColor": "black",
-        "linkWidth": 2,
-        "linkDashStyle": null,
-        "containerRef": [],
-        "definedAttributes": [],
-        "required": false,
-        "rules": {
-          "values": null,
-          "min": null,
-          "max": null,
-          "regex": null
-        }
-      },
-      {
-        "name": "env",
-        "type": "Object",
-        "linkType": null,
-        "linkRef": [],
-        "linkColor": "black",
-        "linkWidth": 2,
-        "linkDashStyle": null,
-        "containerRef": [],
-        "definedAttributes": [],
-        "required": false,
-        "rules": {
-          "values": null,
-          "min": null,
-          "max": null,
-          "regex": null
-        }
-      }
-    ],
-    "isContainer": false,
+    "isContainer": true,
+    "displayType": "workflow",
+    "preventChildrenMovement": true,
+    "childrenPerLine": 10,
     "available": true
   },
   {
     "type": "trigger",
     "icon": "PushTrigger",
-    "model": null,
-    "parentTypes": [],
+    "model": "trigger",
+    "displayName": "Trigger - push",
+    "description": "Workflow trigger is an event that causes a workflow to run.<br/><br/>This event will trigger the workflow on a push event.",
+    "url": "https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#push",
+    "parentTypes": [
+      "workflow"
+    ],
     "childrenTypes": [],
     "definedAttributes": [
       {
         "name": "workflow_id",
         "type": "Reference",
+        "displayName": "Id of workflow",
+        "description": null,
+        "url": null,
         "linkType": null,
         "linkRef": [],
         "linkColor": "black",
@@ -231,12 +181,15 @@
       {
         "name": "branches",
         "type": "Array",
+        "displayName": null,
+        "description": "Select branch name on push event.",
+        "url": "https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#running-your-workflow-only-when-a-push-to-specific-branches-occurs",
         "linkType": null,
         "linkRef": [],
         "linkColor": "black",
         "linkWidth": 2,
         "linkDashStyle": null,
-        "containerRef": [],
+        "containerRef": null,
         "definedAttributes": [],
         "required": false,
         "rules": {
@@ -248,18 +201,29 @@
       }
     ],
     "isContainer": false,
+    "displayType": null,
+    "preventChildrenMovement": false,
+    "childrenPerLine": null,
     "action": "push"
   },
   {
     "type": "trigger",
     "icon": "PullRequestTrigger",
-    "model": null,
-    "parentTypes": [],
+    "model": "trigger",
+    "displayName": "Trigger - pull request",
+    "description": "Workflow trigger is an event that causes a workflow to run.<br/><br/>This event will trigger the workflow on a pull request event.",
+    "url": null,
+    "parentTypes": [
+      "workflow"
+    ],
     "childrenTypes": [],
     "definedAttributes": [
       {
         "name": "workflow_id",
         "type": "Reference",
+        "displayName": "Id of workflow",
+        "description": null,
+        "url": null,
         "linkType": null,
         "linkRef": [],
         "linkColor": "black",
@@ -278,12 +242,15 @@
       {
         "name": "types",
         "type": "Array",
+        "displayName": "Activity types",
+        "description": "Run your workflow when an activity on a pull request occurs in the workflow's repository.",
+        "url": "https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#pull_request",
         "linkType": null,
         "linkRef": [],
         "linkColor": "black",
         "linkWidth": 2,
         "linkDashStyle": null,
-        "containerRef": [],
+        "containerRef": null,
         "definedAttributes": [],
         "required": false,
         "rules": {
@@ -295,36 +262,29 @@
       }
     ],
     "isContainer": false,
+    "displayType": null,
+    "preventChildrenMovement": false,
+    "childrenPerLine": null,
     "action": "pull_request"
   },
   {
     "type": "step",
     "icon": "CommandStep",
-    "model": null,
-    "parentTypes": [],
+    "model": "step",
+    "displayName": "Command step",
+    "description": "Task of the job. Step can run commands, run setup tasks, or run an action in your repository, a public repository, or an action published in a Docker registry.",
+    "url": "https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idsteps",
+    "parentTypes": [
+      "job"
+    ],
     "childrenTypes": [],
     "definedAttributes": [
       {
-        "name": "workflow_id",
-        "type": "Reference",
-        "linkType": null,
-        "linkRef": [],
-        "linkColor": "black",
-        "linkWidth": 2,
-        "linkDashStyle": null,
-        "containerRef": "workflow",
-        "definedAttributes": [],
-        "required": true,
-        "rules": {
-          "values": null,
-          "min": null,
-          "max": null,
-          "regex": null
-        }
-      },
-      {
         "name": "job_id",
         "type": "Reference",
+        "displayName": "Id of job",
+        "description": null,
+        "url": null,
         "linkType": null,
         "linkRef": [],
         "linkColor": "black",
@@ -343,12 +303,15 @@
       {
         "name": "name",
         "type": "String",
+        "displayName": null,
+        "description": "The name of the step as it will appear in the \"Actions\" tab of the GitHub repository.",
+        "url": "https://docs.github.com/en/actions/using-jobs/using-jobs-in-a-workflow#setting-a-name-for-a-job",
         "linkType": null,
         "linkRef": [],
         "linkColor": "black",
         "linkWidth": 2,
         "linkDashStyle": null,
-        "containerRef": [],
+        "containerRef": null,
         "definedAttributes": [],
         "required": false,
         "rules": {
@@ -361,12 +324,15 @@
       {
         "name": "env",
         "type": "Object",
+        "displayName": "Environment variables",
+        "description": "Variables for steps to use in the runner environment.",
+        "url": "https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsenv",
         "linkType": null,
         "linkRef": [],
         "linkColor": "black",
         "linkWidth": 2,
         "linkDashStyle": null,
-        "containerRef": [],
+        "containerRef": null,
         "definedAttributes": [],
         "required": false,
         "rules": {
@@ -379,14 +345,17 @@
       {
         "name": "run",
         "type": "String",
+        "displayName": null,
+        "description": null,
+        "url": null,
         "linkType": null,
         "linkRef": [],
         "linkColor": "black",
         "linkWidth": 2,
         "linkDashStyle": null,
-        "containerRef": [],
+        "containerRef": null,
         "definedAttributes": [],
-        "required": false,
+        "required": true,
         "rules": {
           "values": null,
           "min": null,
@@ -396,36 +365,29 @@
       }
     ],
     "isContainer": false,
+    "displayType": null,
+    "preventChildrenMovement": false,
+    "childrenPerLine": null,
     "name": "command-step"
   },
   {
     "type": "step",
     "icon": "ReusableStep",
-    "model": null,
-    "parentTypes": [],
+    "model": "step",
+    "displayName": "Reusable step",
+    "description": "Task of the job. Step can run commands, run setup tasks, or run an action in your repository, a public repository, or an action published in a Docker registry.",
+    "url": "https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idsteps",
+    "parentTypes": [
+      "job"
+    ],
     "childrenTypes": [],
     "definedAttributes": [
       {
-        "name": "workflow_id",
-        "type": "Reference",
-        "linkType": null,
-        "linkRef": [],
-        "linkColor": "black",
-        "linkWidth": 2,
-        "linkDashStyle": null,
-        "containerRef": "workflow",
-        "definedAttributes": [],
-        "required": true,
-        "rules": {
-          "values": null,
-          "min": null,
-          "max": null,
-          "regex": null
-        }
-      },
-      {
         "name": "job_id",
         "type": "Reference",
+        "displayName": "Id of job",
+        "description": null,
+        "url": null,
         "linkType": null,
         "linkRef": [],
         "linkColor": "black",
@@ -444,12 +406,15 @@
       {
         "name": "name",
         "type": "String",
+        "displayName": null,
+        "description": "The name of the step as it will appear in the \"Actions\" tab of the GitHub repository.",
+        "url": "https://docs.github.com/en/actions/using-jobs/using-jobs-in-a-workflow#setting-a-name-for-a-job",
         "linkType": null,
         "linkRef": [],
         "linkColor": "black",
         "linkWidth": 2,
         "linkDashStyle": null,
-        "containerRef": [],
+        "containerRef": null,
         "definedAttributes": [],
         "required": false,
         "rules": {
@@ -462,12 +427,15 @@
       {
         "name": "env",
         "type": "Object",
+        "displayName": "Environment variables",
+        "description": "Variables for steps to use in the runner environment.",
+        "url": "https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsenv",
         "linkType": null,
         "linkRef": [],
         "linkColor": "black",
         "linkWidth": 2,
         "linkDashStyle": null,
-        "containerRef": [],
+        "containerRef": null,
         "definedAttributes": [],
         "required": false,
         "rules": {
@@ -480,14 +448,17 @@
       {
         "name": "uses",
         "type": "String",
+        "displayName": "External action",
+        "description": "Select an action to run as part of a step in your job. An action is a reusable unit of code. You can use an action defined in the same repository as the workflow, a public repository, or in a published Docker container image.",
+        "url": "https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsuses",
         "linkType": null,
         "linkRef": [],
         "linkColor": "black",
         "linkWidth": 2,
         "linkDashStyle": null,
-        "containerRef": [],
+        "containerRef": null,
         "definedAttributes": [],
-        "required": false,
+        "required": true,
         "rules": {
           "values": null,
           "min": null,
@@ -498,12 +469,15 @@
       {
         "name": "with",
         "type": "Object",
+        "displayName": "Input parameters",
+        "description": "Input parameters of the action defined by \"uses\" keyword.",
+        "url": "https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepswith",
         "linkType": null,
         "linkRef": [],
         "linkColor": "black",
         "linkWidth": 2,
         "linkDashStyle": null,
-        "containerRef": [],
+        "containerRef": null,
         "definedAttributes": [],
         "required": false,
         "rules": {
@@ -515,6 +489,9 @@
       }
     ],
     "isContainer": false,
+    "displayType": null,
+    "preventChildrenMovement": false,
+    "childrenPerLine": null,
     "name": "reusable-step"
   }
 ]
