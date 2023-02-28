@@ -69,11 +69,6 @@ export default [
     definition: reusableStep,
     path: './completeCI.yml',
     attributes: [new ComponentAttribute({
-      name: 'workflow_id',
-      value: 'workflow_1',
-      type: 'String',
-      definition: job.definedAttributes.find(({ name }) => name === 'workflow_id'),
-    }), new ComponentAttribute({
       name: 'job_id',
       value: 'branch-naming-rules',
       type: 'String',
@@ -136,11 +131,6 @@ export default [
     definition: reusableStep,
     path: './completeCI.yml',
     attributes: [new ComponentAttribute({
-      name: 'workflow_id',
-      value: 'workflow_1',
-      type: 'String',
-      definition: job.definedAttributes.find(({ name }) => name === 'workflow_id'),
-    }), new ComponentAttribute({
       name: 'job_id',
       value: 'check-style',
       type: 'String',
@@ -157,11 +147,6 @@ export default [
     definition: reusableStep,
     path: './completeCI.yml',
     attributes: [new ComponentAttribute({
-      name: 'workflow_id',
-      value: 'workflow_1',
-      type: 'String',
-      definition: job.definedAttributes.find(({ name }) => name === 'workflow_id'),
-    }), new ComponentAttribute({
       name: 'job_id',
       value: 'check-style',
       type: 'String',
@@ -192,11 +177,6 @@ export default [
     definition: commandStep,
     path: './completeCI.yml',
     attributes: [new ComponentAttribute({
-      name: 'workflow_id',
-      value: 'workflow_1',
-      type: 'String',
-      definition: job.definedAttributes.find(({ name }) => name === 'workflow_id'),
-    }), new ComponentAttribute({
       name: 'job_id',
       value: 'check-style',
       type: 'String',
@@ -218,11 +198,6 @@ export default [
     definition: commandStep,
     path: './completeCI.yml',
     attributes: [new ComponentAttribute({
-      name: 'workflow_id',
-      value: 'workflow_1',
-      type: 'String',
-      definition: job.definedAttributes.find(({ name }) => name === 'workflow_id'),
-    }), new ComponentAttribute({
       name: 'job_id',
       value: 'check-style',
       type: 'String',
@@ -265,11 +240,6 @@ export default [
     definition: reusableStep,
     path: './completeCI.yml',
     attributes: [new ComponentAttribute({
-      name: 'workflow_id',
-      value: 'workflow_1',
-      type: 'String',
-      definition: job.definedAttributes.find(({ name }) => name === 'workflow_id'),
-    }), new ComponentAttribute({
       name: 'job_id',
       value: 'sonarcloud',
       type: 'String',
@@ -295,11 +265,6 @@ export default [
     definition: reusableStep,
     path: './completeCI.yml',
     attributes: [new ComponentAttribute({
-      name: 'workflow_id',
-      value: 'workflow_1',
-      type: 'String',
-      definition: job.definedAttributes.find(({ name }) => name === 'workflow_id'),
-    }), new ComponentAttribute({
       name: 'job_id',
       value: 'sonarcloud',
       type: 'String',
@@ -334,11 +299,6 @@ export default [
     definition: reusableStep,
     path: './completeCI.yml',
     attributes: [new ComponentAttribute({
-      name: 'workflow_id',
-      value: 'workflow_1',
-      type: 'String',
-      definition: job.definedAttributes.find(({ name }) => name === 'workflow_id'),
-    }), new ComponentAttribute({
       name: 'job_id',
       value: 'sonarcloud',
       type: 'String',
