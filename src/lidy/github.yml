@@ -27,14 +27,12 @@ PullRequestTriggerTypes:
   _listOf: string
 
 Job:
-  _map:
+  _mapFacultative:
     name: JobName
     runs-on: JobRunsOn
-    steps:
-      _min: 1
-      _listOf: Step
-  _mapFacultative:
     needs: JobNeeds
+    steps:
+      _listOf: Step
 
 
 JobId: string
@@ -71,4 +69,4 @@ StepEnv:
   _mapOf: { StepMapKey: StepMapValue }
 StepMapKey: string
 StepMapValue:
-  _oneOf: [int, string]
+  _oneOf: [int, float, string]

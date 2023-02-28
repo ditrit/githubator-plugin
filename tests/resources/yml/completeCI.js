@@ -180,8 +180,8 @@ export default [
       name: 'with',
       value: [new ComponentAttribute({
         name: 'node-version',
-        value: 16,
-        type: 'Number',
+        value: '18.0',
+        type: 'String',
       })],
       type: 'Object',
       definition: reusableStep.definedAttributes.find(({ name }) => name === 'with'),

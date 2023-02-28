@@ -1,0 +1,8 @@
+name: Empty trigger
+
+on:
+  push:
+    branches: []
+
+  pull_request:
+    types: []
