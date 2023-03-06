@@ -2,6 +2,7 @@ import fs from 'fs';
 import GithubActionParser from 'src/parser/GithubActionParser';
 import { FileInput, FileInformation, DefaultData } from 'leto-modelizer-plugin-core';
 import completeCI from 'tests/resources/yml/completeCI';
+import emptyTriggers from 'tests/resources/yml/emptyTriggers';
 import GithubActionMetadata from 'src/metadata/GithubActionMetadata';
 
 describe('Test GithubActionParser', () => {
@@ -29,6 +30,20 @@ describe('Test GithubActionParser', () => {
   });
 
   describe('Test function: parse', () => {
+    it('Should detect empty triggers', () => {
+      const pluginData = new DefaultData();
+      const metadata = new GithubActionMetadata(pluginData);
+      const parser = new GithubActionParser(pluginData);
+      const file = new FileInput({
+        path: './completeCI.yml',
+        content: fs.readFileSync('tests/resources/yml/emptyTriggers.yml', 'utf8'),
+      });
+      metadata.parse();
+      parser.parse([file]);
+
+      expect(pluginData.components).toEqual(emptyTriggers);
+    });
+
     it('Should set empty components without input files', () => {
       const pluginData = new DefaultData();
       const parser = new GithubActionParser(pluginData);

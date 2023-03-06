@@ -5,13 +5,10 @@ on:
 {% for trigger in triggers %}
 {% if trigger.definition.action === 'push' %}{% set branches = getTriggerAttribute(trigger, 'branches').value %}
   push:
-    branches:{% for branch in branches %}
-
-      - {{ branch }}
-{% endfor %}
+    branches: [{% if branches.length > 0 %}{{ branches.join(', ') }}{% endif %}]
 {% else %}{% set types = getTriggerAttribute(trigger, 'types').value %}
   pull_request:
-    types: [{{ types.join(', ') }}]
+    types: [{% if types.length > 0 %}{{ types.join(', ') }}{% endif %}]
 {% endif %}
 {% endfor %}
 {% endif %}
@@ -26,6 +23,7 @@ jobs:
     {{attribute.name}}: {{attribute.value }}
     {% endif %}
 {% endfor %}
+{% if getSteps(job.id).length > 0 %}
     steps:
 {% for step in getSteps(job.id) %}
 {% for attribute in getAttributes(step) %}
@@ -43,6 +41,7 @@ jobs:
 {% endfor %}
 {% endfor %}
 
+{% endif %}
 {% endfor %}`;
 
 export default {

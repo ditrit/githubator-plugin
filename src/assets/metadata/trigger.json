@@ -1,17 +1,27 @@
 [{
   "type": "trigger",
   "icon": "PushTrigger",
+  "displayName": "Trigger - push",
+  "description": "Workflow triggers are events that cause a workflow to run.<br/><br/>This event with trigger workflow on a push event.",
+  "url": "https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#push",
   "action": "push",
   "attributes": [{
     "name": "branches",
-    "type": "Array"
+    "type": "Array",
+    "description": "Select branch name on push event.",
+    "url": "https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#running-your-workflow-only-when-a-push-to-specific-branches-occurs"
   }]
 }, {
   "type": "trigger",
   "icon": "PullRequestTrigger",
+  "displayName": "Trigger - pull request",
+  "description": "Workflow triggers are events that cause a workflow to run.<br/><br/>This event with trigger workflow on a pull request event.",
   "action": "pull_request",
   "attributes": [{
     "name": "types",
-    "type": "Array"
+    "type": "Array",
+    "displayName": "Activity types",
+    "description": "Runs your workflow when activity on a pull request in the workflow's repository occurs.",
+    "url": "https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#pull_request"
   }]
 }]

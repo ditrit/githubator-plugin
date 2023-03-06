@@ -94,22 +94,11 @@ class GithubActionListener {
    * @return {Component} Created component with default attribute(s) and properties.
    */
   createComponent(id, definition, attribute) {
-    const attributes = [new ComponentAttribute({
-      name: 'workflow_id',
-      value: this.workflowId,
-      type: 'String',
-      definition: definition.definedAttributes.find(({ name }) => name === 'workflow_id'),
-    })];
-
-    if (attribute) {
-      attributes.push(attribute);
-    }
-
     return new Component({
       id,
       definition,
       path: this.fileInformation.path,
-      attributes,
+      attributes: [attribute],
     });
   }
 
@@ -136,7 +125,16 @@ class GithubActionListener {
     const definition = this.definitions.find(({ type, action }) => type === 'trigger' && action === 'push');
 
     this.triggerIndex += 1;
-    this.currentTrigger = this.createComponent(`trigger_${this.triggerIndex}`, definition);
+    this.currentTrigger = this.createComponent(
+      `trigger_${this.triggerIndex}`,
+      definition,
+      new ComponentAttribute({
+        name: 'workflow_id',
+        value: this.workflowId,
+        type: 'String',
+        definition: definition.definedAttributes.find(({ name }) => name === 'workflow_id'),
+      }),
+    );
   }
 
   exit_PushTrigger() {
@@ -145,9 +143,15 @@ class GithubActionListener {
   }
 
   enter_PushTriggerBranches(ctx) {
+    let value = [];
+
+    if (ctx.items) {
+      value = ctx.items.map((item) => item.value);
+    }
+
     this.currentTrigger.attributes.push(new ComponentAttribute({
       name: 'branches',
-      value: ctx.items.map(({ value }) => value),
+      value,
       type: 'Array',
       definition: this.currentTrigger.definition.definedAttributes.find(({ name }) => name === 'branches'),
     }));
@@ -157,7 +161,16 @@ class GithubActionListener {
     const definition = this.definitions.find(({ type, action }) => type === 'trigger' && action === 'pull_request');
 
     this.triggerIndex += 1;
-    this.currentTrigger = this.createComponent(`trigger_${this.triggerIndex}`, definition);
+    this.currentTrigger = this.createComponent(
+      `trigger_${this.triggerIndex}`,
+      definition,
+      new ComponentAttribute({
+        name: 'workflow_id',
+        value: this.workflowId,
+        type: 'String',
+        definition: definition.definedAttributes.find(({ name }) => name === 'workflow_id'),
+      }),
+    );
   }
 
   exit_PullRequestTrigger() {
@@ -177,7 +190,16 @@ class GithubActionListener {
   enter_JobId(ctx) {
     const definition = this.definitions.find(({ type }) => type === 'job');
 
-    this.currentJob = this.createComponent(ctx.value, definition);
+    this.currentJob = this.createComponent(
+      ctx.value,
+      definition,
+      new ComponentAttribute({
+        name: 'workflow_id',
+        value: this.workflowId,
+        type: 'String',
+        definition: definition.definedAttributes.find(({ name }) => name === 'workflow_id'),
+      }),
+    );
   }
 
   enter_JobName(ctx) {
@@ -313,10 +335,20 @@ class GithubActionListener {
   }
 
   enter_StepMapValue(ctx) {
+    let type = 'String';
+    let value = ctx.source;
+
+    if (ctx.type === 'QUOTE_SINGLE') {
+      value = `'${ctx.source}'`;
+    } else if (/^[0-9]+$/.test(ctx.source)) {
+      type = 'Number';
+      value = parseInt(ctx.source, 10);
+    }
+
     this.currentStepAttribute.value.push(new ComponentAttribute({
       name: this.currentKey,
-      value: ctx.type === 'QUOTE_SINGLE' ? `'${ctx.value}'` : ctx.value,
-      type: Number.isInteger(ctx.value) ? 'Number' : 'String',
+      value,
+      type,
     }));
 
     this.currentKey = null;

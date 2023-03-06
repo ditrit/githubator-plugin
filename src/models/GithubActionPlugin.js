@@ -1,12 +1,12 @@
 import {
   DefaultPlugin,
-  DefaultData,
 } from 'leto-modelizer-plugin-core';
 import GithubActionDrawer from 'src/draw/GithubActionDrawer';
 import GithubActionMetadata from 'src/metadata/GithubActionMetadata';
 import GithubActionParser from 'src/parser/GithubActionParser';
 import GithubActionRenderer from 'src/render/GithubActionRenderer';
 import { name, version } from 'package.json';
+import GithubActionData from 'src/models/GithubActionData';
 
 /**
  * GithubAction plugin.
@@ -16,9 +16,10 @@ class GithubActionPlugin extends DefaultPlugin {
    * Default constructor.
    */
   constructor() {
-    const pluginData = new DefaultData({
+    const pluginData = new GithubActionData({
       name,
       version,
+      defaultFileName: 'new_workflow.yml',
     });
 
     super({

@@ -2,7 +2,10 @@
   {
     "type": "workflow",
     "icon": "DefaultWorkflow",
-    "model": "DefaultContainer",
+    "model": "workflow",
+    "displayName": null,
+    "description": null,
+    "url": null,
     "parentTypes": [],
     "childrenTypes": [
       "trigger",
@@ -12,12 +15,15 @@
       {
         "name": "name",
         "type": "String",
+        "displayName": null,
+        "description": null,
+        "url": null,
         "linkType": null,
         "linkRef": [],
         "linkColor": "black",
         "linkWidth": 2,
         "linkDashStyle": null,
-        "containerRef": [],
+        "containerRef": null,
         "definedAttributes": [],
         "required": true,
         "rules": {
@@ -29,12 +35,18 @@
       }
     ],
     "isContainer": true,
+    "displayType": null,
+    "preventChildrenMovement": false,
+    "childrenPerLine": null,
     "available": true
   },
   {
     "type": "job",
     "icon": "DefaultJob",
-    "model": "DefaultContainer",
+    "model": "job",
+    "displayName": null,
+    "description": null,
+    "url": null,
     "parentTypes": [
       "workflow"
     ],
@@ -45,6 +57,9 @@
       {
         "name": "workflow_id",
         "type": "Reference",
+        "displayName": null,
+        "description": null,
+        "url": null,
         "linkType": null,
         "linkRef": [],
         "linkColor": "black",
@@ -63,12 +78,15 @@
       {
         "name": "name",
         "type": "String",
+        "displayName": null,
+        "description": null,
+        "url": null,
         "linkType": null,
         "linkRef": [],
         "linkColor": "black",
         "linkWidth": 2,
         "linkDashStyle": null,
-        "containerRef": [],
+        "containerRef": null,
         "definedAttributes": [],
         "required": false,
         "rules": {
@@ -81,12 +99,15 @@
       {
         "name": "runs-on",
         "type": "String",
+        "displayName": null,
+        "description": null,
+        "url": null,
         "linkType": null,
         "linkRef": [],
         "linkColor": "black",
         "linkWidth": 2,
         "linkDashStyle": null,
-        "containerRef": [],
+        "containerRef": null,
         "definedAttributes": [],
         "required": false,
         "rules": {
@@ -99,12 +120,15 @@
       {
         "name": "needs",
         "type": "Link",
+        "displayName": null,
+        "description": null,
+        "url": null,
         "linkType": "Reverse",
         "linkRef": "job",
         "linkColor": "black",
         "linkWidth": 2,
         "linkDashStyle": null,
-        "containerRef": [],
+        "containerRef": null,
         "definedAttributes": [],
         "required": false,
         "rules": {
@@ -115,39 +139,30 @@
         }
       }
     ],
-    "isContainer": false,
+    "isContainer": true,
+    "displayType": "workflow",
+    "preventChildrenMovement": true,
+    "childrenPerLine": 10,
     "available": true
   },
   {
     "type": "step",
     "icon": "DefaultStep",
-    "model": "DefaultModel",
+    "model": "step",
+    "displayName": null,
+    "description": null,
+    "url": null,
     "parentTypes": [
       "job"
     ],
     "childrenTypes": [],
     "definedAttributes": [
       {
-        "name": "workflow_id",
-        "type": "Reference",
-        "linkType": null,
-        "linkRef": [],
-        "linkColor": "black",
-        "linkWidth": 2,
-        "linkDashStyle": null,
-        "containerRef": "workflow",
-        "definedAttributes": [],
-        "required": true,
-        "rules": {
-          "values": null,
-          "min": null,
-          "max": null,
-          "regex": null
-        }
-      },
-      {
         "name": "job_id",
         "type": "Reference",
+        "displayName": null,
+        "description": null,
+        "url": null,
         "linkType": null,
         "linkRef": [],
         "linkColor": "black",
@@ -166,12 +181,15 @@
       {
         "name": "name",
         "type": "String",
+        "displayName": null,
+        "description": null,
+        "url": null,
         "linkType": null,
         "linkRef": [],
         "linkColor": "black",
         "linkWidth": 2,
         "linkDashStyle": null,
-        "containerRef": [],
+        "containerRef": null,
         "definedAttributes": [],
         "required": false,
         "rules": {
@@ -184,12 +202,15 @@
       {
         "name": "env",
         "type": "Object",
+        "displayName": null,
+        "description": null,
+        "url": null,
         "linkType": null,
         "linkRef": [],
         "linkColor": "black",
         "linkWidth": 2,
         "linkDashStyle": null,
-        "containerRef": [],
+        "containerRef": null,
         "definedAttributes": [],
         "required": false,
         "rules": {
@@ -201,18 +222,29 @@
       }
     ],
     "isContainer": false,
+    "displayType": null,
+    "preventChildrenMovement": false,
+    "childrenPerLine": null,
     "available": true
   },
   {
     "type": "trigger",
     "icon": "PushTrigger",
-    "model": null,
-    "parentTypes": [],
+    "model": "trigger",
+    "displayName": null,
+    "description": null,
+    "url": null,
+    "parentTypes": [
+      "workflow"
+    ],
     "childrenTypes": [],
     "definedAttributes": [
       {
         "name": "workflow_id",
         "type": "Reference",
+        "displayName": null,
+        "description": null,
+        "url": null,
         "linkType": null,
         "linkRef": [],
         "linkColor": "black",
@@ -231,12 +263,15 @@
       {
         "name": "branches",
         "type": "Array",
+        "displayName": null,
+        "description": null,
+        "url": null,
         "linkType": null,
         "linkRef": [],
         "linkColor": "black",
         "linkWidth": 2,
         "linkDashStyle": null,
-        "containerRef": [],
+        "containerRef": null,
         "definedAttributes": [],
         "required": false,
         "rules": {
@@ -248,18 +283,29 @@
       }
     ],
     "isContainer": false,
+    "displayType": null,
+    "preventChildrenMovement": false,
+    "childrenPerLine": null,
     "action": "push"
   },
   {
     "type": "trigger",
     "icon": "PullRequestTrigger",
-    "model": null,
-    "parentTypes": [],
+    "model": "trigger",
+    "displayName": null,
+    "description": null,
+    "url": null,
+    "parentTypes": [
+      "workflow"
+    ],
     "childrenTypes": [],
     "definedAttributes": [
       {
         "name": "workflow_id",
         "type": "Reference",
+        "displayName": null,
+        "description": null,
+        "url": null,
         "linkType": null,
         "linkRef": [],
         "linkColor": "black",
@@ -278,12 +324,15 @@
       {
         "name": "types",
         "type": "Array",
+        "displayName": null,
+        "description": null,
+        "url": null,
         "linkType": null,
         "linkRef": [],
         "linkColor": "black",
         "linkWidth": 2,
         "linkDashStyle": null,
-        "containerRef": [],
+        "containerRef": null,
         "definedAttributes": [],
         "required": false,
         "rules": {
@@ -295,36 +344,29 @@
       }
     ],
     "isContainer": false,
+    "displayType": null,
+    "preventChildrenMovement": false,
+    "childrenPerLine": null,
     "action": "pull_request"
   },
   {
     "type": "step",
     "icon": "CommandStep",
-    "model": null,
-    "parentTypes": [],
+    "model": "step",
+    "displayName": null,
+    "description": null,
+    "url": null,
+    "parentTypes": [
+      "job"
+    ],
     "childrenTypes": [],
     "definedAttributes": [
       {
-        "name": "workflow_id",
-        "type": "Reference",
-        "linkType": null,
-        "linkRef": [],
-        "linkColor": "black",
-        "linkWidth": 2,
-        "linkDashStyle": null,
-        "containerRef": "workflow",
-        "definedAttributes": [],
-        "required": true,
-        "rules": {
-          "values": null,
-          "min": null,
-          "max": null,
-          "regex": null
-        }
-      },
-      {
         "name": "job_id",
         "type": "Reference",
+        "displayName": null,
+        "description": null,
+        "url": null,
         "linkType": null,
         "linkRef": [],
         "linkColor": "black",
@@ -343,12 +385,15 @@
       {
         "name": "name",
         "type": "String",
+        "displayName": null,
+        "description": null,
+        "url": null,
         "linkType": null,
         "linkRef": [],
         "linkColor": "black",
         "linkWidth": 2,
         "linkDashStyle": null,
-        "containerRef": [],
+        "containerRef": null,
         "definedAttributes": [],
         "required": false,
         "rules": {
@@ -361,12 +406,15 @@
       {
         "name": "env",
         "type": "Object",
+        "displayName": null,
+        "description": null,
+        "url": null,
         "linkType": null,
         "linkRef": [],
         "linkColor": "black",
         "linkWidth": 2,
         "linkDashStyle": null,
-        "containerRef": [],
+        "containerRef": null,
         "definedAttributes": [],
         "required": false,
         "rules": {
@@ -379,14 +427,17 @@
       {
         "name": "run",
         "type": "String",
+        "displayName": null,
+        "description": null,
+        "url": null,
         "linkType": null,
         "linkRef": [],
         "linkColor": "black",
         "linkWidth": 2,
         "linkDashStyle": null,
-        "containerRef": [],
+        "containerRef": null,
         "definedAttributes": [],
-        "required": false,
+        "required": true,
         "rules": {
           "values": null,
           "min": null,
@@ -396,36 +447,29 @@
       }
     ],
     "isContainer": false,
+    "displayType": null,
+    "preventChildrenMovement": false,
+    "childrenPerLine": null,
     "name": "command-step"
   },
   {
     "type": "step",
     "icon": "ReusableStep",
-    "model": null,
-    "parentTypes": [],
+    "model": "step",
+    "displayName": null,
+    "description": null,
+    "url": null,
+    "parentTypes": [
+      "job"
+    ],
     "childrenTypes": [],
     "definedAttributes": [
       {
-        "name": "workflow_id",
-        "type": "Reference",
-        "linkType": null,
-        "linkRef": [],
-        "linkColor": "black",
-        "linkWidth": 2,
-        "linkDashStyle": null,
-        "containerRef": "workflow",
-        "definedAttributes": [],
-        "required": true,
-        "rules": {
-          "values": null,
-          "min": null,
-          "max": null,
-          "regex": null
-        }
-      },
-      {
         "name": "job_id",
         "type": "Reference",
+        "displayName": null,
+        "description": null,
+        "url": null,
         "linkType": null,
         "linkRef": [],
         "linkColor": "black",
@@ -444,12 +488,15 @@
       {
         "name": "name",
         "type": "String",
+        "displayName": null,
+        "description": null,
+        "url": null,
         "linkType": null,
         "linkRef": [],
         "linkColor": "black",
         "linkWidth": 2,
         "linkDashStyle": null,
-        "containerRef": [],
+        "containerRef": null,
         "definedAttributes": [],
         "required": false,
         "rules": {
@@ -462,12 +509,15 @@
       {
         "name": "env",
         "type": "Object",
+        "displayName": null,
+        "description": null,
+        "url": null,
         "linkType": null,
         "linkRef": [],
         "linkColor": "black",
         "linkWidth": 2,
         "linkDashStyle": null,
-        "containerRef": [],
+        "containerRef": null,
         "definedAttributes": [],
         "required": false,
         "rules": {
@@ -480,14 +530,17 @@
       {
         "name": "uses",
         "type": "String",
+        "displayName": null,
+        "description": null,
+        "url": null,
         "linkType": null,
         "linkRef": [],
         "linkColor": "black",
         "linkWidth": 2,
         "linkDashStyle": null,
-        "containerRef": [],
+        "containerRef": null,
         "definedAttributes": [],
-        "required": false,
+        "required": true,
         "rules": {
           "values": null,
           "min": null,
@@ -498,12 +551,15 @@
       {
         "name": "with",
         "type": "Object",
+        "displayName": null,
+        "description": null,
+        "url": null,
         "linkType": null,
         "linkRef": [],
         "linkColor": "black",
         "linkWidth": 2,
         "linkDashStyle": null,
-        "containerRef": [],
+        "containerRef": null,
         "definedAttributes": [],
         "required": false,
         "rules": {
@@ -515,6 +571,9 @@
       }
     ],
     "isContainer": false,
+    "displayType": null,
+    "preventChildrenMovement": false,
+    "childrenPerLine": null,
     "name": "reusable-step"
   }
 ]
