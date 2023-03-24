@@ -1,5 +1,21 @@
 # githubator-plugin
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ditrit_githubator-plugin&metric=alert_status)](https://sonarcloud.io/summary/overall?id=ditrit_githubator-plugin)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=ditrit_githubator-plugin&metric=reliability_rating)](https://sonarcloud.io/summary/overall?id=ditrit_githubator-plugin)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=ditrit_githubator-plugin&metric=sqale_rating)](https://sonarcloud.io/summary/overall?id=ditrit_githubator-plugin)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=ditrit_githubator-plugin&metric=security_rating)](https://sonarcloud.io/summary/overall?id=ditrit_githubator-plugin)
+
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=ditrit_githubator-plugin&metric=code_smells)](https://sonarcloud.io/summary/overall?id=ditrit_githubator-plugin)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=ditrit_githubator-plugin&metric=bugs)](https://sonarcloud.io/summary/overall?id=ditrit_githubator-plugin)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=ditrit_githubator-plugin&metric=vulnerabilities)](https://sonarcloud.io/summary/overall?id=ditrit_githubator-plugin)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=ditrit_githubator-plugin&metric=sqale_index)](https://sonarcloud.io/summary/overall?id=ditrit_githubator-plugin)
+
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=ditrit_githubator-plugin&metric=ncloc)](https://sonarcloud.io/summary/overall?id=ditrit_githubator-plugin)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=ditrit_githubator-plugin&metric=coverage)](https://sonarcloud.io/summary/overall?id=ditrit_githubator-plugin)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=ditrit_githubator-plugin&metric=duplicated_lines_density)](https://sonarcloud.io/summary/overall?id=ditrit_githubator-plugin)
+
+[![](https://dcbadge.vercel.app/api/server/zkKfj9gj2C?style=flat&theme=default-inverted)](https://discord.gg/zkKfj9gj2C)
+
 Plugin for managing GithubAction files in [Leto-Modelizer](https://github.com/ditrit/leto-modelizer).
 
 ## Build your plugin
