@@ -64,20 +64,21 @@ class GithubActionRenderer extends DefaultRender {
       const workflow = components.find(({ definition }) => definition.type === 'workflow');
       const triggers = components.filter(({ definition }) => definition.type === 'trigger');
       const steps = components.filter(({ definition }) => definition.type === 'step');
+      const content = `${this.template.render({
+        workflow,
+        workflowName: workflow?.attributes.find(({ name }) => name === 'name'),
+        triggers,
+        jobs: components.filter(({ definition }) => definition.type === 'job'),
+        getAttributes: (component) => component.attributes.filter(({ name }) => name !== 'workflow_id' && name !== 'job_id'),
+        getTriggerAttribute: (trigger, name) => trigger.attributes
+          .find((attribute) => attribute.name === name),
+        getSteps: (jobId) => steps.filter((step) => step.attributes
+          .some(({ name, value }) => name === 'job_id' && value === jobId)),
+      }).trim()}\n`;
 
       files.push(new FileInput({
         path,
-        content: `${this.template.render({
-          workflow,
-          workflowName: workflow.attributes.find(({ name }) => name === 'name'),
-          triggers,
-          jobs: components.filter(({ definition }) => definition.type === 'job'),
-          getAttributes: (component) => component.attributes.filter(({ name }) => name !== 'workflow_id' && name !== 'job_id'),
-          getTriggerAttribute: (trigger, name) => trigger.attributes
-            .find((attribute) => attribute.name === name),
-          getSteps: (jobId) => steps.filter((step) => step.attributes
-            .some(({ name, value }) => name === 'job_id' && value === jobId)),
-        }).trim()}\n`,
+        content,
       }));
     });
 

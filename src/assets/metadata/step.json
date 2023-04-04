@@ -1,20 +1,30 @@
 [{
   "type": "step",
+  "displayName": "Command step",
   "icon": "CommandStep",
   "name": "command-step",
   "attributes": [{
     "name": "run",
-    "type": "String"
+    "type": "String",
+    "required": true
   }]
 }, {
   "type": "step",
+  "displayName": "Reusable step",
   "icon": "ReusableStep",
   "name": "reusable-step",
   "attributes": [{
     "name": "uses",
-    "type": "String"
+    "type": "String",
+    "required": true,
+    "displayName": "External action",
+    "description": "Select an action to run as part of a step in your job. An action is a reusable unit of code. You can use an action defined in the same repository as the workflow, a public repository, or in a published Docker container image.",
+    "url": "https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsuses"
   }, {
     "name": "with",
-    "type": "Object"
+    "type": "Object",
+    "displayName": "Input parameters",
+    "description": "Input parameters of the action defined by \"uses\" keyword.",
+    "url": "https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepswith"
   }]
 }]
