@@ -55,12 +55,23 @@ class GithubActionRenderer extends DefaultRender {
    * Render files from related components.
    *
    * @param {Map<string,Component>} map - Component mapped by file name.
+   * @param {string} [parentEventId=null] - Parent event id.
    * @returns {FileInput[]} Render files array.
    */
-  generateFilesFromComponentsMap(map) {
+  generateFilesFromComponentsMap(map, parentEventId = null) {
     const files = [];
 
     map.forEach((components, path) => {
+      const id = this.pluginData.emitEvent({
+        parent: parentEventId,
+        type: 'Render',
+        action: 'write',
+        status: 'running',
+        files: [path],
+        data: {
+          global: false,
+        },
+      });
       const workflow = components.find(({ definition }) => definition.type === 'workflow');
       const triggers = components.filter(({ definition }) => definition.type === 'trigger');
       const steps = components.filter(({ definition }) => definition.type === 'step');
@@ -80,6 +91,8 @@ class GithubActionRenderer extends DefaultRender {
         path,
         content,
       }));
+
+      this.pluginData.emitEvent({ id, status: 'success' });
     });
 
     return files;

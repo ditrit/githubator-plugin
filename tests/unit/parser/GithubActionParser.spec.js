@@ -53,6 +53,18 @@ describe('Test GithubActionParser', () => {
       expect(pluginData.components.length).toEqual(0);
     });
 
+    it('Should set empty components with files without content', () => {
+      const pluginData = new DefaultData();
+      const parser = new GithubActionParser(pluginData);
+      parser.parse([
+        new FileInformation({ path: 'a', content: null }),
+        new FileInformation({ path: 'a', content: '' }),
+      ]);
+
+      expect(pluginData.components).not.toBeNull();
+      expect(pluginData.components.length).toEqual(0);
+    });
+
     it('Parse completeCI.yml should set valid components', () => {
       const pluginData = new DefaultData();
       const metadata = new GithubActionMetadata(pluginData);
