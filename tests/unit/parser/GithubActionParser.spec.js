@@ -29,6 +29,26 @@ describe('Test GithubActionParser', () => {
     });
   });
 
+  describe('Test function: getModels', () => {
+    it('should return an empty array if there are no files', () => {
+      const parser = new GithubActionParser();
+
+      expect(parser.getModels([])).toEqual([]);
+    });
+
+    it('should return only parsable model', () => {
+      const parser = new GithubActionParser();
+      const files = [
+        new FileInformation({ path: '.github/workflows/verySimple.yml' }),
+        new FileInformation({ path: 'simple.yml' }),
+        new FileInformation({ path: '.github/workflows/simple.tf' }),
+      ];
+      const parsableFiles = files.filter((file) => parser.isParsable(file));
+
+      expect(parser.getModels(parsableFiles)).toEqual(['.github/workflows/verySimple.yml']);
+    });
+  });
+
   describe('Test function: parse', () => {
     it('Should detect empty triggers', () => {
       const pluginData = new DefaultData();

@@ -9,12 +9,11 @@ class GithubActionParser extends DefaultParser {
   /**
    * Indicate if this parser can parse this file.
    * @param {FileInformation} [fileInformation] - File information.
+   * @param {string} [fileInformation.path] - Path of the file.
    * @return {Boolean} - Boolean that indicates if this file can be parsed or not.
    */
   isParsable(fileInformation) {
-    // TODO: rework when we can use any folder we want on leto-modelizer
-    // Use: return /^\.github\/workflows\/.*\.yml$/.test(fileInformation.path);
-    return /\/.*\.yml$/.test(fileInformation.path);
+    return /^\.github\/workflows\/.*\.yml$/.test(fileInformation.path);
   }
 
   /**
