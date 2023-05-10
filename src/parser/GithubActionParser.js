@@ -12,8 +12,9 @@ class GithubActionParser extends DefaultParser {
    * @return {Boolean} - Boolean that indicates if this file can be parsed or not.
    */
   isParsable({ path }) {
-    // Accept both yaml and yml extensions
-    return /^\.github\/workflows\/.*\.ya?ml$/.test(path);
+    // TODO: rework when we can use any folder we want on leto-modelizer
+    // Use: return /^\.github\/workflows\/.*\.ya?ml$/.test(path);
+    return /\/.*\.ya?ml$/.test(path);
   }
 
   /**
