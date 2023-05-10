@@ -7,6 +7,7 @@ import GithubActionMetadata from 'src/metadata/GithubActionMetadata';
 import GithubActionParser from 'src/parser/GithubActionParser';
 import GithubActionRenderer from 'src/render/GithubActionRenderer';
 import packageInfo from 'package.json';
+import GithubActionConfiguration from 'src/models/GithubActionConfiguration';
 
 /**
  * GithubAction plugin.
@@ -34,6 +35,7 @@ class GithubActionPlugin extends DefaultPlugin {
       pluginMetadata: new GithubActionMetadata(pluginData),
       pluginParser: new GithubActionParser(pluginData),
       pluginRenderer: new GithubActionRenderer(pluginData),
+      configuration: new GithubActionConfiguration(),
     });
   }
 }

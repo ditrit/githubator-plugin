@@ -13,7 +13,8 @@ class GithubActionParser extends DefaultParser {
    * @return {Boolean} - Boolean that indicates if this file can be parsed or not.
    */
   isParsable({ path }) {
-    return /^\.github\/workflows\/.*\.yml$/.test(path);
+    // Accept both yaml and yml extensions
+    return /^\.github\/workflows\/.*\.ya?ml$/.test(path);
   }
 
   /**
