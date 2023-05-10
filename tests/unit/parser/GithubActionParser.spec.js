@@ -27,6 +27,13 @@ describe('Test GithubActionParser', () => {
 
       expect(parser.isParsable(file)).toEqual(false);
     });
+
+    it('Should return components from a .yaml file', () => {
+      const parser = new GithubActionParser();
+      const file = new FileInformation({ path: '.github/workflows/yamlFile.yaml' });
+
+      expect(parser.isParsable(file)).toEqual(true);
+    });
   });
 
   describe('Test function: getModels', () => {
