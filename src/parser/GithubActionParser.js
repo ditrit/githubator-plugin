@@ -9,7 +9,6 @@ class GithubActionParser extends DefaultParser {
   /**
    * Indicate if this parser can parse this file.
    * @param {FileInformation} [fileInformation] - File information.
-   * @param {string} [fileInformation.path] - Path of the file.
    * @return {Boolean} - Boolean that indicates if this file can be parsed or not.
    */
   isParsable({ path }) {
