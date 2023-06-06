@@ -6,8 +6,8 @@ import { ComponentDefinition } from 'leto-modelizer-plugin-core';
 class TriggerDefinition extends ComponentDefinition {
   /**
    * Default constructor.
-   * @param {Object} [props] - Object that contains all properties to set.
-   * @param {String} [props.action] - Action name called by the trigger.
+   * @param {object} [props] - Object that contains all properties to set.
+   * @param {string} [props.action] - Action name called by the trigger.
    */
   constructor(props = {
     action: null,
@@ -15,7 +15,7 @@ class TriggerDefinition extends ComponentDefinition {
     super(props);
     /**
      * Action name called by the trigger.
-     * @type {String}
+     * @type {string}
      */
     this.action = props.action || null;
   }

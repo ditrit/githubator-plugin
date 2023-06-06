@@ -28,7 +28,7 @@ class GithubActionMetadata extends DefaultMetadata {
 
   /**
    * Parse generic definitions.
-   * @return {GenericComponentDefinition[]} Generic definitions array.
+   * @returns {GenericComponentDefinition[]} Generic definitions array.
    */
   parseGeneric() {
     const generics = [];
@@ -67,7 +67,7 @@ class GithubActionMetadata extends DefaultMetadata {
   /**
    * Parse not generic definitions.
    * @param {GenericComponentDefinition[]} generics - Generic definitions array.
-   * @return {GenericComponentDefinition[]} Not generic definitions array.
+   * @returns {GenericComponentDefinition[]} Not generic definitions array.
    */
   parseNotGeneric(generics) {
     const definitions = [];

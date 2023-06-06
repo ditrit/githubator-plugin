@@ -15,8 +15,7 @@ import GithubActionConfiguration from 'src/models/GithubActionConfiguration';
 class GithubActionPlugin extends DefaultPlugin {
   /**
    * Default constructor.
-   *
-   * @param {object} [props={}] - Object that contains all properties to set.
+   * @param {object} [props] - Object that contains all properties to set.
    * @param {object} [props.event] - Event manager.
    * @param {Function} [props.event.next] - Function to emit event.
    */
