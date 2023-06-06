@@ -9,17 +9,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Add syntax colorization for monaco editor from [official syntax](https://github.com/microsoft/monaco-editor/blob/main/src/basic-languages/yaml/yaml.ts)
+- Add syntax colorization for monaco editor from [official syntax](https://github.com/microsoft/monaco-editor/blob/main/src/basic-languages/yaml/yaml.ts).
 
 ### Changed
 
 - Make sure that only `.yml` file in `.github/workflow` is parsable.
+- Update to plugin-core version 0.16.0.
 
 ## [0.1.1] - 2023/05/03
 
 ### Changed
 
-- Update to plugin-core version 0.15.2
+- Update to plugin-core version 0.15.2.
 
 ## [0.1.0] - 2023/05/03
 

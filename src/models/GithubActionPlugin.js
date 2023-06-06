@@ -15,27 +15,29 @@ import GithubActionConfiguration from 'src/models/GithubActionConfiguration';
 class GithubActionPlugin extends DefaultPlugin {
   /**
    * Default constructor.
-   *
-   * @param {object} [props={}] - Object that contains all properties to set.
+   * @param {object} [props] - Object that contains all properties to set.
    * @param {object} [props.event] - Event manager.
    * @param {Function} [props.event.next] - Function to emit event.
    */
   constructor(props = {
     event: null,
   }) {
-    const pluginData = new DefaultData({
+    const configuration = new GithubActionConfiguration({
+      defaultFileName: 'new_workflow.yml',
+      defaultFileExtension: 'yml',
+    });
+    const pluginData = new DefaultData(configuration, {
       name: packageInfo.name,
       version: packageInfo.version,
-      defaultFileName: 'new_workflow.yml',
     }, props.event);
 
     super({
+      configuration,
       pluginData,
       pluginDrawer: new GithubActionDrawer(pluginData),
       pluginMetadata: new GithubActionMetadata(pluginData),
       pluginParser: new GithubActionParser(pluginData),
       pluginRenderer: new GithubActionRenderer(pluginData),
-      configuration: new GithubActionConfiguration(),
     });
   }
 }

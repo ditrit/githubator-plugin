@@ -7,9 +7,9 @@
   "scripts": {
     "build": "webpack",
     "generate:parser": "node scripts/generate_parser.js",
-    "lint": "eslint --ext .js src",
-    "lint:fix": "eslint --fix --ext .js src",
-    "lint:report": "eslint --ext .js src -f json-relative > eslint.json",
+    "lint": "eslint --max-warnings=0 --ext .js src",
+    "lint:fix": "eslint --max-warnings=0 --fix --ext .js src",
+    "lint:report": "eslint --max-warnings=0 --ext .js src -f json-relative > eslint.json",
     "test": "jest",
     "test:coverage": "jest --coverage"
   },
@@ -29,27 +29,28 @@
   },
   "homepage": "https://github.com/ditrit/githubator-plugin#readme",
   "dependencies": {
-    "leto-modelizer-plugin-core": "github:ditrit/leto-modelizer-plugin-core#0.15.2",
+    "leto-modelizer-plugin-core": "github:ditrit/leto-modelizer-plugin-core#0.16.0",
     "lidy-js": "github:ditrit/lidy-js#1.0.1",
     "nunjucks": "=3.2.4"
   },
   "devDependencies": {
-    "@babel/core": "=7.21.8",
-    "@babel/preset-env": "=7.21.5",
+    "@babel/core": "=7.22.1",
+    "@babel/preset-env": "=7.22.4",
     "babel-jest": "=29.5.0",
     "babel-loader": "=9.1.2",
     "esdoc": "=1.1.0",
     "esdoc-standard-plugin": "=1.0.0",
-    "eslint": "=8.40.0",
+    "eslint": "=8.42.0",
     "eslint-config-airbnb-base": "=15.0.0",
     "eslint-formatter-json-relative": "=0.1.0",
     "eslint-plugin-import": "=2.27.5",
     "eslint-plugin-jest": "=27.2.1",
+    "eslint-plugin-jsdoc": "=46.2.4",
     "eslint-webpack-plugin": "=4.0.1",
     "jest": "=29.5.0",
     "jest-environment-jsdom": "=29.5.0",
     "jest-sonar-reporter": "=2.0.0",
-    "webpack": "=5.82.0",
-    "webpack-cli": "=5.1.1"
+    "webpack": "=5.85.1",
+    "webpack-cli": "=5.1.3"
   }
 }

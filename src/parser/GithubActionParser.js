@@ -9,17 +9,19 @@ class GithubActionParser extends DefaultParser {
   /**
    * Indicate if this parser can parse this file.
    * @param {FileInformation} [fileInformation] - File information.
-   * @return {Boolean} - Boolean that indicates if this file can be parsed or not.
+   * @param {string} [fileInformation.path] - Path of the file.
+   * @returns {boolean} - Boolean that indicates if this file can be parsed or not.
    */
   isParsable({ path }) {
-    // Accept both yaml and yml extensions
-    return /^\.github\/workflows\/.*\.ya?ml$/.test(path);
+    // TODO: rework when we can use any folder we want on leto-modelizer
+    // Use: return /^\.github\/workflows\/.*\.ya?ml$/.test(path);
+    return /\/.*\.ya?ml$/.test(path);
   }
 
   /**
    * Convert the content of files into Components.
-   * @param {FileInput[]} [inputs=[]] - Data you want to parse.
-   * @param {string} [parentEventId=null] - Parent event id.
+   * @param {FileInput[]} [inputs] - Data you want to parse.
+   * @param {string} [parentEventId] - Parent event id.
    */
   parse(inputs = [], parentEventId = null) {
     this.pluginData.components = [];

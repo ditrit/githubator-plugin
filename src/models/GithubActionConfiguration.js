@@ -2,15 +2,21 @@ import { DefaultConfiguration } from 'leto-modelizer-plugin-core';
 import syntax from 'src/configuration/syntax';
 
 /**
- * Terrator configuration.
+ * Githubator configuration.
  */
 class GithubActionConfiguration extends DefaultConfiguration {
   /**
    * Default constructor.
+   * @param {object} [props] - Object that contains all properties to set.
    */
-  constructor() {
+  constructor(props) {
     super({
-      editor: { syntax },
+      ...props,
+      editor: {
+        ...props.editor,
+        syntax,
+      },
+      tags: ['Github', 'CI', 'CD', 'Workflow', 'Pipeline'],
     });
   }
 }

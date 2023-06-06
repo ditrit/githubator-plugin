@@ -6,7 +6,6 @@ import { Component, ComponentAttribute } from 'leto-modelizer-plugin-core';
 class GithubActionListener {
   /**
    * Default constructor.
-   *
    * @param {FileInformation} fileInformation - File information.
    * @param {ComponentDefinition[]} definitions - All component definitions.
    * @param {string} workflowId - Workflow id.
@@ -14,73 +13,61 @@ class GithubActionListener {
   constructor(fileInformation, definitions, workflowId) {
     /**
      * File information.
-     *
      * @type {FileInformation}
      */
     this.fileInformation = fileInformation;
     /**
      * Array of component definitions.
-     *
      * @type {ComponentDefinition[]}
      */
     this.definitions = definitions;
     /**
      * Parsed components.
-     *
      * @type {Component[]}
      */
     this.components = [];
     /**
      * Current trigger.
-     *
      * @type {Component}
      */
     this.currentTrigger = null;
     /**
      * Current job.
-     *
      * @type {Component}
      */
     this.currentJob = null;
     /**
      * Current step.
-     *
      * @type {Component}
      */
     this.currentStep = null;
     /**
      * Current step attribute.
-     *
      * @type {Component}
      */
     this.currentStepAttribute = null;
     /**
      * Current key of attribute. Use only for unreferenced attribute.
-     *
      * @type {string}
      */
     this.currentKey = null;
     /**
      * Current index of trigger. Use for trigger id.
-     *
      * @type {number}
      */
     this.triggerIndex = 0;
     /**
      * Current index of step. Use for step id.
-     *
      * @type {number}
      */
     this.stepIndex = 0;
     /**
      * Current workflow.
-     *
      * @type {Component}
      */
     this.workflow = null;
     /**
      * workflow id.
-     *
      * @type {string}
      */
     this.workflowId = workflowId;
@@ -91,7 +78,7 @@ class GithubActionListener {
    * @param {string} id - Component id.
    * @param {ComponentDefinition} definition -  Component definition.
    * @param {ComponentAttribute} [attribute] - Component attribute.
-   * @return {Component} Created component with default attribute(s) and properties.
+   * @returns {Component} Created component with default attribute(s) and properties.
    */
   createComponent(id, definition, attribute) {
     return new Component({

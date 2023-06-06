@@ -8,7 +8,6 @@ import templates from 'src/render/GithubActionTemplate';
 class GithubActionRenderer extends DefaultRender {
   /**
    * Default constructor, initialize nunjucks library and template.
-   *
    * @param {object} pluginData - Plugin data with components
    */
   constructor(pluginData) {
@@ -31,7 +30,6 @@ class GithubActionRenderer extends DefaultRender {
 
   /**
    * Convert all provided components and links in GitHub files.
-   *
    * @returns {FileInput[]} Array of generated files from components and links.
    */
   renderFiles() {
@@ -53,9 +51,8 @@ class GithubActionRenderer extends DefaultRender {
 
   /**
    * Render files from related components.
-   *
    * @param {Map<string,Component>} map - Component mapped by file name.
-   * @param {string} [parentEventId=null] - Parent event id.
+   * @param {string} [parentEventId] - Parent event id.
    * @returns {FileInput[]} Render files array.
    */
   generateFilesFromComponentsMap(map, parentEventId = null) {
