@@ -16,6 +16,7 @@ module.exports = {
   // Rules order is important, please avoid shuffling them
   extends: [
     'airbnb-base',
+    'plugin:jsdoc/recommended',
   ],
 
   globals: {
@@ -54,6 +55,7 @@ module.exports = {
 
     // allow debugger during development only
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'jsdoc/no-undefined-types': 'off',
     'no-restricted-imports': ['error', {
       patterns: [{
         group: ['\\.\\./*', '\\./*'],
