@@ -13,21 +13,21 @@ class GithubActionParser extends DefaultParser {
    * @returns {boolean} - Boolean that indicates if this file can be parsed or not.
    */
   isParsable({ path }) {
-    // TODO: rework when we can use any folder we want on leto-modelizer
-    // Use: return /^\.github\/workflows\/.*\.ya?ml$/.test(path);
-    return /\/.*\.ya?ml$/.test(path);
+    return /^\.github\/workflows\/.*\.ya?ml$/.test(path);
   }
 
   /**
    * Convert the content of files into Components.
+   * @param {FileInformation} diagram - Diagram file information.
    * @param {FileInput[]} [inputs] - Data you want to parse.
    * @param {string} [parentEventId] - Parent event id.
    */
-  parse(inputs = [], parentEventId = null) {
+  parse(diagram, inputs = [], parentEventId = null) {
     this.pluginData.components = [];
     this.pluginData.parseErrors = [];
 
     inputs
+      .filter(({ path }) => diagram.path === path)
       .filter(({ path, content }) => {
         if (content && content.trim() !== '') {
           return true;

@@ -1,4 +1,4 @@
-import { DefaultConfiguration } from 'leto-modelizer-plugin-core';
+import { DefaultConfiguration, Tag } from 'leto-modelizer-plugin-core';
 import syntax from 'src/configuration/syntax';
 
 /**
@@ -16,7 +16,12 @@ class GithubActionConfiguration extends DefaultConfiguration {
         ...props.editor,
         syntax,
       },
-      tags: ['Github', 'CI', 'CD', 'Workflow', 'Pipeline'],
+      tags: [
+        new Tag({ type: 'language', value: 'Github' }),
+        new Tag({ type: 'category', value: 'CI' }),
+        new Tag({ type: 'category', value: 'CD' }),
+      ],
+      restrictiveFolder: '.github/workflows/',
     });
   }
 }
