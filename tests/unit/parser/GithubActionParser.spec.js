@@ -66,7 +66,7 @@ describe('Test GithubActionParser', () => {
         content: fs.readFileSync('tests/resources/yml/emptyTriggers.yml', 'utf8'),
       });
       metadata.parse();
-      parser.parse([file]);
+      parser.parse(new FileInformation({ path: './completeCI.yml' }), [file]);
 
       expect(pluginData.components).toEqual(emptyTriggers);
     });
@@ -101,7 +101,7 @@ describe('Test GithubActionParser', () => {
         content: fs.readFileSync('tests/resources/yml/completeCI.yml', 'utf8'),
       });
       metadata.parse();
-      parser.parse([file]);
+      parser.parse(new FileInformation({ path: './completeCI.yml' }), [file]);
 
       expect(pluginData.components).toEqual(completeCI);
     });
