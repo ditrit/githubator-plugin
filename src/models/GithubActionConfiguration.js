@@ -22,6 +22,7 @@ class GithubActionConfiguration extends DefaultConfiguration {
         new Tag({ type: 'category', value: 'CD' }),
       ],
       restrictiveFolder: '.github/workflows/',
+      isFolderTypeDiagram: false,
     });
   }
 }
