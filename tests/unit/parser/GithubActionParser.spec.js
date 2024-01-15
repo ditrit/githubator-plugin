@@ -9,7 +9,7 @@ describe('Test GithubActionParser', () => {
   describe('Test function: isParsable', () => {
     it('Should return true on verySimple.yml', () => {
       const parser = new GithubActionParser();
-      const file = new FileInformation({ path: '.github/workflows/verySimple.yml' });
+      const file = new FileInformation({ path: 'rootFolder/.github/workflows/verySimple.yml' });
 
       expect(parser.isParsable(file)).toEqual(true);
     });

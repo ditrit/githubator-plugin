@@ -8,12 +8,12 @@ import { parse as lidyParse } from 'src/lidy/github';
 class GithubActionParser extends DefaultParser {
   /**
    * Indicate if this parser can parse this file.
-   * @param {FileInformation} [fileInformation] - File information.
-   * @param {string} [fileInformation.path] - Path of the file.
+   * @param {FileInformation} fileInformation - File information.
+   * @param {string} fileInformation.path - Absolute path of the file.
    * @returns {boolean} - Boolean that indicates if this file can be parsed or not.
    */
   isParsable({ path }) {
-    return /^\.github\/workflows\/.*\.ya?ml$/.test(path);
+    return /^.*\.github\/workflows\/.*\.ya?ml$/.test(path);
   }
 
   /**
