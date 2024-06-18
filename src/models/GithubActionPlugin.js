@@ -21,10 +21,7 @@ class GithubActionPlugin extends DefaultPlugin {
   constructor(props = {
     event: null,
   }) {
-    const configuration = new GithubActionConfiguration({
-      defaultFileName: 'new_workflow.yml',
-      defaultFileExtension: 'yml',
-    });
+    const configuration = new GithubActionConfiguration();
     const pluginData = new DefaultData(configuration, {
       name: packageInfo.name,
       version: packageInfo.version,
