@@ -2,7 +2,6 @@ import {
   DefaultData,
   DefaultPlugin,
 } from 'leto-modelizer-plugin-core';
-import GithubActionDrawer from 'src/draw/GithubActionDrawer';
 import GithubActionMetadata from 'src/metadata/GithubActionMetadata';
 import GithubActionParser from 'src/parser/GithubActionParser';
 import GithubActionRenderer from 'src/render/GithubActionRenderer';
@@ -34,7 +33,6 @@ class GithubActionPlugin extends DefaultPlugin {
     super({
       configuration,
       pluginData,
-      pluginDrawer: new GithubActionDrawer(pluginData),
       pluginMetadata: new GithubActionMetadata(pluginData),
       pluginParser: new GithubActionParser(pluginData),
       pluginRenderer: new GithubActionRenderer(pluginData),
