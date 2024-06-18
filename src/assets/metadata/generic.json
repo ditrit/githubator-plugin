@@ -22,7 +22,15 @@
         "description": "The name of the workflow as it will appear in the \"Actions\" tab of the GitHub repository.",
         "url": "https://docs.github.com/en/actions/using-workflows/about-workflows#understanding-the-workflow-file"
       }
-    ]
+    ],
+    "defaultWidth": 96,
+    "defaultHeight": 80,
+    "minWidth": 96,
+    "minHeight": 80,
+    "reservedWidth": 12,
+    "reservedHeight":  80,
+    "margin": 15,
+    "gap": 50
   },
   "trigger": {
     "type": "trigger",
@@ -41,7 +49,15 @@
         "containerRef": "workflow",
         "required": true
       }
-    ]
+    ],
+    "defaultWidth": 96,
+    "defaultHeight": 80,
+    "minWidth": 96,
+    "minHeight": 80,
+    "reservedWidth": 0,
+    "reservedHeight":  0,
+    "margin": 15,
+    "gap": 50
   },
   "job": {
     "type": "job",
@@ -61,8 +77,8 @@
     ],
     "isContainer": true,
     "displayType": "workflow",
-    "preventChildrenMovement": true,
-    "childrenPerLine": 10,
+    "workflowDirection": "horizontal",
+    "linkModel": "defaultLink",
     "attributes": [
       {
         "name": "workflow_id",
@@ -91,9 +107,18 @@
         "url": "https://docs.github.com/en/actions/using-jobs/using-jobs-in-a-workflow#defining-prerequisite-jobs",
         "type": "Link",
         "linkType": "Reverse",
-        "linkRef": "job"
+        "linkRef": "job",
+        "linkModel": "defaultLink"
       }
-    ]
+    ],
+    "defaultWidth": 96,
+    "defaultHeight": 80,
+    "minWidth": 140,
+    "minHeight": 200,
+    "reservedWidth": 12,
+    "reservedHeight":  80,
+    "margin": 15,
+    "gap": 50
   },
   "step": {
     "type": "step",
@@ -127,6 +152,14 @@
         "description": "Variables for steps to use in the runner environment.",
         "url": "https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsenv"
       }
-    ]
+    ],
+    "defaultWidth": 96,
+    "defaultHeight": 80,
+    "minWidth": 96,
+    "minHeight": 80,
+    "reservedWidth": 0,
+    "reservedHeight":  0,
+    "margin": 15,
+    "gap": 50
   }
 }
