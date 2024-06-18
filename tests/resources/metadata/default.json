@@ -1,6 +1,7 @@
 [
   {
     "type": "workflow",
+    "category": "workflow",
     "icon": "DefaultWorkflow",
     "model": "workflow",
     "displayName": "Workflow",
@@ -8,7 +9,8 @@
     "url": "https://docs.github.com/en/actions/using-workflows/about-workflows",
     "parentTypes": [],
     "childrenTypes": [
-      "trigger",
+      "push-trigger",
+      "pullrequest-trigger",
       "job"
     ],
     "definedAttributes": [
@@ -42,6 +44,7 @@
   },
   {
     "type": "job",
+    "category": "job",
     "icon": "DefaultJob",
     "model": "job",
     "displayName": "Job",
@@ -51,7 +54,8 @@
       "workflow"
     ],
     "childrenTypes": [
-      "step"
+      "command-step",
+      "reusable-step"
     ],
     "definedAttributes": [
       {
@@ -146,7 +150,9 @@
     "available": true
   },
   {
-    "type": "trigger",
+    "type": "push-trigger",
+    "category": "trigger",
+    "available": false,
     "icon": "PushTrigger",
     "model": "trigger",
     "displayName": "Trigger - push",
@@ -207,7 +213,9 @@
     "action": "push"
   },
   {
-    "type": "trigger",
+    "type": "pullrequest-trigger",
+    "category": "trigger",
+    "available": false,
     "icon": "PullRequestTrigger",
     "model": "trigger",
     "displayName": "Trigger - pull request",
@@ -268,7 +276,8 @@
     "action": "pull_request"
   },
   {
-    "type": "step",
+    "type": "command-step",
+    "category": "step",
     "icon": "CommandStep",
     "model": "step",
     "displayName": "Command step",
@@ -371,7 +380,8 @@
     "name": "command-step"
   },
   {
-    "type": "step",
+    "type": "reusable-step",
+    "category": "step",
     "icon": "ReusableStep",
     "model": "step",
     "displayName": "Reusable step",

@@ -76,11 +76,11 @@ class GithubActionMetadata extends DefaultMetadata {
       .filter((key) => key !== 'generic')
       .flatMap((key) => metadata[key])
       .forEach((data) => {
-        const generic = generics.find(({ type }) => type === data.type);
+        const generic = generics.find(({ category }) => category === data.category);
 
         let definition = null;
 
-        if (data.type === 'trigger') {
+        if (data.category === 'trigger') {
           definition = new TriggerDefinition({
             ...generic,
             definedAttributes: generic.definedAttributes

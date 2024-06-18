@@ -1,9 +1,9 @@
-import { ComponentDefinition } from 'leto-modelizer-plugin-core';
+import GenericComponentDefinition from 'src/models/GenericComponentDefinition';
 
 /**
  * Trigger definition.
  */
-class TriggerDefinition extends ComponentDefinition {
+class TriggerDefinition extends GenericComponentDefinition {
   /**
    * Default constructor.
    * @param {object} [props] - Object that contains all properties to set.
@@ -12,7 +12,7 @@ class TriggerDefinition extends ComponentDefinition {
   constructor(props = {
     action: null,
   }) {
-    super(props);
+    super({ ...props, category: 'trigger' });
     /**
      * Action name called by the trigger.
      * @type {string}

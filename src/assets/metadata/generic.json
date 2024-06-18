@@ -1,13 +1,15 @@
 {
   "workflow": {
     "type": "workflow",
+    "category": "workflow",
     "model": "workflow",
     "icon": "DefaultWorkflow",
     "displayName": "Workflow",
     "description": "A workflow is a configurable automated process that will run one or more jobs.<br/><br/>Workflows are defined by a YAML file checked in to your repository and will run when triggered by an event in your repository, or they can be triggered manually, or at a defined schedule.",
     "url": "https://docs.github.com/en/actions/using-workflows/about-workflows",
     "childrenTypes": [
-      "trigger",
+      "push-trigger",
+      "pullrequest-trigger",
       "job"
     ],
     "isContainer": true,
@@ -24,6 +26,7 @@
   },
   "trigger": {
     "type": "trigger",
+    "category": "trigger",
     "model": "trigger",
     "icon": "DefaultTrigger",
     "available": false,
@@ -42,6 +45,7 @@
   },
   "job": {
     "type": "job",
+    "category": "job",
     "model": "job",
     "displayName": "Job",
     "description": "A workflow run is made up of one or more jobs, which run in parallel by default.",
@@ -52,7 +56,8 @@
       "workflow"
     ],
     "childrenTypes": [
-      "step"
+      "command-step",
+      "reusable-step"
     ],
     "isContainer": true,
     "displayType": "workflow",
@@ -92,6 +97,7 @@
   },
   "step": {
     "type": "step",
+    "category": "step",
     "model": "step",
     "icon": "DefaultStep",
     "available": false,
