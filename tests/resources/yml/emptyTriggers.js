@@ -7,11 +7,11 @@ const metadata = new GithubActionMetadata(pluginData);
 metadata.parse();
 
 const workflow = pluginData.definitions.components
-  .find(({ type }) => type === 'workflow');
+  .find(({ category }) => category === 'workflow');
 const triggerPush = pluginData.definitions.components
-  .find(({ type, action }) => type === 'trigger' && action === 'push');
+  .find(({ category, action }) => category === 'trigger' && action === 'push');
 const triggerPull = pluginData.definitions.components
-  .find(({ type, action }) => type === 'trigger' && action === 'pull_request');
+  .find(({ category, action }) => category === 'trigger' && action === 'pull_request');
 
 export default [
   new Component({

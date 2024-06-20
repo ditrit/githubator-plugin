@@ -7,13 +7,10 @@ import syntax from 'src/configuration/syntax';
 class GithubActionConfiguration extends DefaultConfiguration {
   /**
    * Default constructor.
-   * @param {object} [props] - Object that contains all properties to set.
    */
-  constructor(props) {
+  constructor() {
     super({
-      ...props,
       editor: {
-        ...props.editor,
         syntax,
       },
       tags: [
@@ -23,6 +20,34 @@ class GithubActionConfiguration extends DefaultConfiguration {
       ],
       restrictiveFolder: '.github/workflows/',
       isFolderTypeDiagram: false,
+      defaultFileName: 'new_workflow.yml',
+      defaultFileExtension: 'yml',
+      extraResources: [{
+        type: 'markers',
+        name: 'startLinkMarker',
+      }, {
+        type: 'markers',
+        name: 'endLinkMarker',
+      }, {
+        type: 'links',
+        name: 'defaultLink',
+      }, {
+        type: 'links',
+        name: 'temporaryLink',
+      }, {
+        type: 'icons',
+        name: 'error',
+      }, {
+        type: 'icons',
+        name: 'menu',
+      }, {
+        type: 'icons',
+        name: 'resize',
+      }],
+      container: {
+        margin: 15,
+        gap: 50,
+      },
     });
   }
 }

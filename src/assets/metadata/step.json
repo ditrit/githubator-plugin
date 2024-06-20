@@ -1,5 +1,6 @@
 [{
-  "type": "step",
+  "type": "command-step",
+  "category": "step",
   "displayName": "Command step",
   "icon": "CommandStep",
   "name": "command-step",
@@ -9,7 +10,8 @@
     "required": true
   }]
 }, {
-  "type": "step",
+  "type": "reusable-step",
+  "category": "step",
   "displayName": "Reusable step",
   "icon": "ReusableStep",
   "name": "reusable-step",

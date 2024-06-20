@@ -7,17 +7,17 @@ const metadata = new GithubActionMetadata(pluginData);
 metadata.parse();
 
 const workflow = pluginData.definitions.components
-  .find(({ type }) => type === 'workflow');
+  .find(({ category }) => category === 'workflow');
 const triggerPush = pluginData.definitions.components
-  .find(({ type, action }) => type === 'trigger' && action === 'push');
+  .find(({ category, action }) => category === 'trigger' && action === 'push');
 const triggerPull = pluginData.definitions.components
-  .find(({ type, action }) => type === 'trigger' && action === 'pull_request');
+  .find(({ category, action }) => category === 'trigger' && action === 'pull_request');
 const job = pluginData.definitions.components
-  .find(({ type }) => type === 'job');
+  .find(({ category }) => category === 'job');
 const reusableStep = pluginData.definitions.components
-  .find(({ type, name }) => type === 'step' && name === 'reusable-step');
+  .find(({ category, name }) => category === 'step' && name === 'reusable-step');
 const commandStep = pluginData.definitions.components
-  .find(({ type, name }) => type === 'step' && name === 'command-step');
+  .find(({ category, name }) => category === 'step' && name === 'command-step');
 
 export default [
   new Component({

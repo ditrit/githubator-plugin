@@ -92,7 +92,7 @@ class GithubActionListener {
   enter_workflow() {
     this.workflow = new Component({
       id: this.workflowId,
-      definition: this.definitions.find(({ type }) => type === 'workflow'),
+      definition: this.definitions.find(({ category }) => category === 'workflow'),
       path: this.fileInformation.path,
     });
     this.components.push(this.workflow);
@@ -109,7 +109,7 @@ class GithubActionListener {
   }
 
   enter_PushTrigger() {
-    const definition = this.definitions.find(({ type, action }) => type === 'trigger' && action === 'push');
+    const definition = this.definitions.find(({ category, action }) => category === 'trigger' && action === 'push');
 
     this.triggerIndex += 1;
     this.currentTrigger = this.createComponent(
@@ -145,7 +145,7 @@ class GithubActionListener {
   }
 
   enter_PullRequestTrigger() {
-    const definition = this.definitions.find(({ type, action }) => type === 'trigger' && action === 'pull_request');
+    const definition = this.definitions.find(({ category, action }) => category === 'trigger' && action === 'pull_request');
 
     this.triggerIndex += 1;
     this.currentTrigger = this.createComponent(
@@ -181,7 +181,7 @@ class GithubActionListener {
   }
 
   enter_JobId(ctx) {
-    const definition = this.definitions.find(({ type }) => type === 'job');
+    const definition = this.definitions.find(({ category }) => category === 'job');
 
     this.currentJob = this.createComponent(
       ctx.value,
@@ -238,7 +238,7 @@ class GithubActionListener {
 
   enter_ReusableStep() {
     const definition = this.definitions
-      .find(({ type, name }) => type === 'step' && name === 'reusable-step');
+      .find(({ category, name }) => category === 'step' && name === 'reusable-step');
 
     this.currentStep = this.createComponent(
       `step_${this.stepIndex}`,
@@ -254,7 +254,7 @@ class GithubActionListener {
 
   enter_CommandStep() {
     const definition = this.definitions
-      .find(({ type, name }) => type === 'step' && name === 'command-step');
+      .find(({ category, name }) => category === 'step' && name === 'command-step');
 
     this.currentStep = this.createComponent(
       `step_${this.stepIndex}`,

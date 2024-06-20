@@ -69,14 +69,14 @@ class GithubActionRenderer extends DefaultRender {
           global: false,
         },
       });
-      const workflow = components.find(({ definition }) => definition.type === 'workflow');
-      const triggers = components.filter(({ definition }) => definition.type === 'trigger');
-      const steps = components.filter(({ definition }) => definition.type === 'step');
+      const workflow = components.find(({ definition }) => definition.category === 'workflow');
+      const triggers = components.filter(({ definition }) => definition.category === 'trigger');
+      const steps = components.filter(({ definition }) => definition.category === 'step');
       const content = `${this.template.render({
         workflow,
         workflowName: workflow?.attributes.find(({ name }) => name === 'name'),
         triggers,
-        jobs: components.filter(({ definition }) => definition.type === 'job'),
+        jobs: components.filter(({ definition }) => definition.category === 'job'),
         getAttributes: (component) => component.attributes.filter(({ name }) => name !== 'workflow_id' && name !== 'job_id'),
         getTriggerAttribute: (trigger, name) => trigger.attributes
           .find((attribute) => attribute.name === name),
