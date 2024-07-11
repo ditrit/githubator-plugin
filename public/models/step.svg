@@ -22,7 +22,7 @@
       rx="4"
     />
 
-    <svg x="50%" y="7" fill="#224F7C">
+    <svg x="50%" y="7" fill="#224F7C" overflow="visible">
       <g transform="translate(-22)">{{ icon | safe }}</g>
     </svg>
 
