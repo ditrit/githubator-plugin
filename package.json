@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/ditrit/githubator-plugin#readme",
   "dependencies": {
-    "leto-modelizer-plugin-core": "github:ditrit/leto-modelizer-plugin-core#0.25.0",
+    "leto-modelizer-plugin-core": "github:ditrit/leto-modelizer-plugin-core#0.26.2",
     "lidy-js": "github:ditrit/lidy-js#1.0.1",
     "nunjucks": "=3.2.4"
   },

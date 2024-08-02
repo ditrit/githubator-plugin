@@ -29,10 +29,11 @@
         "definedAttributes": [],
         "required": true,
         "rules": {
-          "values": null,
+          "values": [],
           "min": null,
           "max": null,
-          "regex": null
+          "regex": null,
+          "regexMessage": null
         },
         "tags": []
       }
@@ -84,10 +85,11 @@
         "definedAttributes": [],
         "required": true,
         "rules": {
-          "values": null,
+          "values": [],
           "min": null,
           "max": null,
-          "regex": null
+          "regex": null,
+          "regexMessage": null
         },
         "tags": []
       },
@@ -104,10 +106,11 @@
         "definedAttributes": [],
         "required": false,
         "rules": {
-          "values": null,
+          "values": [],
           "min": null,
           "max": null,
-          "regex": null
+          "regex": null,
+          "regexMessage": null
         },
         "tags": []
       },
@@ -124,10 +127,11 @@
         "definedAttributes": [],
         "required": false,
         "rules": {
-          "values": null,
+          "values": [],
           "min": null,
           "max": null,
-          "regex": null
+          "regex": null,
+          "regexMessage": null
         },
         "tags": []
       },
@@ -144,10 +148,11 @@
         "definedAttributes": [],
         "required": false,
         "rules": {
-          "values": null,
+          "values": [],
           "min": null,
           "max": null,
-          "regex": null
+          "regex": null,
+          "regexMessage": null
         },
         "tags": []
       }
@@ -193,10 +198,11 @@
         "definedAttributes": [],
         "required": true,
         "rules": {
-          "values": null,
+          "values": [],
           "min": null,
           "max": null,
-          "regex": null
+          "regex": null,
+          "regexMessage": null
         },
         "tags": []
       },
@@ -213,10 +219,11 @@
         "definedAttributes": [],
         "required": false,
         "rules": {
-          "values": null,
+          "values": [],
           "min": null,
           "max": null,
-          "regex": null
+          "regex": null,
+          "regexMessage": null
         },
         "tags": []
       }
@@ -264,10 +271,11 @@
         "definedAttributes": [],
         "required": true,
         "rules": {
-          "values": null,
+          "values": [],
           "min": null,
           "max": null,
-          "regex": null
+          "regex": null,
+          "regexMessage": null
         },
         "tags": []
       },
@@ -284,10 +292,11 @@
         "definedAttributes": [],
         "required": false,
         "rules": {
-          "values": null,
+          "values": [],
           "min": null,
           "max": null,
-          "regex": null
+          "regex": null,
+          "regexMessage": null
         },
         "tags": []
       }
@@ -334,10 +343,11 @@
         "definedAttributes": [],
         "required": true,
         "rules": {
-          "values": null,
+          "values": [],
           "min": null,
           "max": null,
-          "regex": null
+          "regex": null,
+          "regexMessage": null
         },
         "tags": []
       },
@@ -354,10 +364,11 @@
         "definedAttributes": [],
         "required": false,
         "rules": {
-          "values": null,
+          "values": [],
           "min": null,
           "max": null,
-          "regex": null
+          "regex": null,
+          "regexMessage": null
         },
         "tags": []
       },
@@ -374,10 +385,11 @@
         "definedAttributes": [],
         "required": false,
         "rules": {
-          "values": null,
+          "values": [],
           "min": null,
           "max": null,
-          "regex": null
+          "regex": null,
+          "regexMessage": null
         },
         "tags": []
       },
@@ -394,10 +406,11 @@
         "definedAttributes": [],
         "required": true,
         "rules": {
-          "values": null,
+          "values": [],
           "min": null,
           "max": null,
-          "regex": null
+          "regex": null,
+          "regexMessage": null
         },
         "tags": []
       }
@@ -444,10 +457,11 @@
         "definedAttributes": [],
         "required": true,
         "rules": {
-          "values": null,
+          "values": [],
           "min": null,
           "max": null,
-          "regex": null
+          "regex": null,
+          "regexMessage": null
         },
         "tags": []
       },
@@ -464,10 +478,11 @@
         "definedAttributes": [],
         "required": false,
         "rules": {
-          "values": null,
+          "values": [],
           "min": null,
           "max": null,
-          "regex": null
+          "regex": null,
+          "regexMessage": null
         },
         "tags": []
       },
@@ -484,10 +499,11 @@
         "definedAttributes": [],
         "required": false,
         "rules": {
-          "values": null,
+          "values": [],
           "min": null,
           "max": null,
-          "regex": null
+          "regex": null,
+          "regexMessage": null
         },
         "tags": []
       },
@@ -504,10 +520,11 @@
         "definedAttributes": [],
         "required": true,
         "rules": {
-          "values": null,
+          "values": [],
           "min": null,
           "max": null,
-          "regex": null
+          "regex": null,
+          "regexMessage": null
         },
         "tags": []
       },
@@ -524,10 +541,11 @@
         "definedAttributes": [],
         "required": false,
         "rules": {
-          "values": null,
+          "values": [],
           "min": null,
           "max": null,
-          "regex": null
+          "regex": null,
+          "regexMessage": null
         },
         "tags": []
       }
