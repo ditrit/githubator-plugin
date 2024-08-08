@@ -1,5 +1,5 @@
 import GithubActionMetadata from 'src/metadata/GithubActionMetadata';
-import { Component, ComponentAttribute, DefaultData } from 'leto-modelizer-plugin-core';
+import { Component, ComponentAttribute, DefaultData } from '@ditrit/leto-modelizer-plugin-core';
 
 const pluginData = new DefaultData();
 const metadata = new GithubActionMetadata(pluginData);

@@ -2,7 +2,7 @@ import {
   ComponentAttributeDefinition,
   ComponentDefinition,
   DefaultMetadata,
-} from 'leto-modelizer-plugin-core';
+} from '@ditrit/leto-modelizer-plugin-core';
 import metadata from 'src/assets/metadata/index';
 import GenericComponentDefinition from 'src/models/GenericComponentDefinition';
 import TriggerDefinition from 'src/models/TriggerDefinition';

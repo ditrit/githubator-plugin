@@ -1,4 +1,4 @@
-import { DefaultParser } from 'leto-modelizer-plugin-core';
+import { DefaultParser } from '@ditrit/leto-modelizer-plugin-core';
 import GithubActionListener from 'src/parser/GithubActionListener';
 import { parse as lidyParse } from 'src/lidy/github';
 

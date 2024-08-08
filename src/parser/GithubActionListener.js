@@ -1,4 +1,4 @@
-import { Component, ComponentAttribute } from 'leto-modelizer-plugin-core';
+import { Component, ComponentAttribute } from '@ditrit/leto-modelizer-plugin-core';
 
 /**
  * Lidy listener for GitHub Action files.

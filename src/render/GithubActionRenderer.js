@@ -1,4 +1,4 @@
-import { DefaultRender, FileInput } from 'leto-modelizer-plugin-core';
+import { DefaultRender, FileInput } from '@ditrit/leto-modelizer-plugin-core';
 import nunjucks from 'nunjucks';
 import templates from 'src/render/GithubActionTemplate';
 

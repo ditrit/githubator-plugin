@@ -1,7 +1,7 @@
 import {
   DefaultData,
   DefaultPlugin,
-} from 'leto-modelizer-plugin-core';
+} from '@ditrit/leto-modelizer-plugin-core';
 import GithubActionMetadata from 'src/metadata/GithubActionMetadata';
 import GithubActionParser from 'src/parser/GithubActionParser';
 import GithubActionRenderer from 'src/render/GithubActionRenderer';

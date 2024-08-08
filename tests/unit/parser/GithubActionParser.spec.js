@@ -1,6 +1,6 @@
 import fs from 'fs';
 import GithubActionParser from 'src/parser/GithubActionParser';
-import { FileInput, FileInformation, DefaultData } from 'leto-modelizer-plugin-core';
+import { FileInput, FileInformation, DefaultData } from '@ditrit/leto-modelizer-plugin-core';
 import completeCI from 'tests/resources/yml/completeCI';
 import emptyTriggers from 'tests/resources/yml/emptyTriggers';
 import GithubActionMetadata from 'src/metadata/GithubActionMetadata';
