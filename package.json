@@ -1,6 +1,6 @@
 {
   "name": "@ditrit/githubator-plugin",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "description": "Github action plugin for Leto modelizer.",
   "main": "dist/githubator-plugin.js",
   "exports": {
