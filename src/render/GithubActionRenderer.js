@@ -1,6 +1,6 @@
 import { DefaultRender, FileInput } from '@ditrit/leto-modelizer-plugin-core';
 import nunjucks from 'nunjucks';
-import templates from 'src/render/GithubActionTemplate';
+import templates from './GithubActionTemplate';
 
 /**
  * Class to render GithubAction files from components.

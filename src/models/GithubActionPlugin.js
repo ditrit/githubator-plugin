@@ -2,11 +2,11 @@ import {
   DefaultData,
   DefaultPlugin,
 } from '@ditrit/leto-modelizer-plugin-core';
-import GithubActionMetadata from 'src/metadata/GithubActionMetadata';
-import GithubActionParser from 'src/parser/GithubActionParser';
-import GithubActionRenderer from 'src/render/GithubActionRenderer';
-import packageInfo from 'package.json';
-import GithubActionConfiguration from 'src/models/GithubActionConfiguration';
+import GithubActionMetadata from '../metadata/GithubActionMetadata';
+import GithubActionParser from '../parser/GithubActionParser';
+import GithubActionRenderer from '../render/GithubActionRenderer';
+import packageInfo from '../../package.json';
+import GithubActionConfiguration from './GithubActionConfiguration';
 
 /**
  * GithubAction plugin.

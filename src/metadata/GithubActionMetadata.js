@@ -3,9 +3,9 @@ import {
   ComponentDefinition,
   DefaultMetadata,
 } from '@ditrit/leto-modelizer-plugin-core';
-import metadata from 'src/assets/metadata/index';
-import GenericComponentDefinition from 'src/models/GenericComponentDefinition';
-import TriggerDefinition from 'src/models/TriggerDefinition';
+import metadata from '../assets/metadata/index';
+import GenericComponentDefinition from '../models/GenericComponentDefinition';
+import TriggerDefinition from '../models/TriggerDefinition';
 
 /**
  * Class to validate and retrieve component definitions from GithubAction metadata.
