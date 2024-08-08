@@ -1,3 +1,3 @@
-import GithubActionPlugin from 'src/models/GithubActionPlugin';
+import GithubActionPlugin from './models/GithubActionPlugin';
 
 export default GithubActionPlugin;

@@ -1,6 +1,6 @@
-import { DefaultParser } from 'leto-modelizer-plugin-core';
-import GithubActionListener from 'src/parser/GithubActionListener';
-import { parse as lidyParse } from 'src/lidy/github';
+import { DefaultParser } from '@ditrit/leto-modelizer-plugin-core';
+import GithubActionListener from './GithubActionListener';
+import { parse as lidyParse } from '../lidy/github';
 
 /**
  * Class to parse and retrieve components from GithubAction files.

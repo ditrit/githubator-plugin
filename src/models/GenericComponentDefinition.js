@@ -1,4 +1,4 @@
-import { ComponentDefinition } from 'leto-modelizer-plugin-core';
+import { ComponentDefinition } from '@ditrit/leto-modelizer-plugin-core';
 
 /**
  * Generic component definition.

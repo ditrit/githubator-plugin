@@ -1,5 +1,5 @@
 import GithubActionRenderer from 'src/render/GithubActionRenderer';
-import { DefaultData, FileInput, FileInformation } from 'leto-modelizer-plugin-core';
+import { DefaultData, FileInput, FileInformation } from '@ditrit/leto-modelizer-plugin-core';
 import fs from 'fs';
 import GithubActionParser from 'src/parser/GithubActionParser';
 import GithubActionMetadata from 'src/metadata/GithubActionMetadata';

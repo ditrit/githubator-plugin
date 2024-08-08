@@ -1,5 +1,5 @@
 import GithubActionMetadata from 'src/metadata/GithubActionMetadata';
-import { DefaultData } from 'leto-modelizer-plugin-core';
+import { DefaultData } from '@ditrit/leto-modelizer-plugin-core';
 import fs from 'fs';
 
 describe('Test GithubActionMetadata', () => {

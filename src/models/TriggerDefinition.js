@@ -1,4 +1,4 @@
-import GenericComponentDefinition from 'src/models/GenericComponentDefinition';
+import GenericComponentDefinition from './GenericComponentDefinition';
 
 /**
  * Trigger definition.
