@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
+## [Unreleased]
+
+## Changed
+
+- Update plugin-core to version `0.28.0`.
+
 ## [0.5.0] - 2024/08/08
 
 ### Added
@@ -15,13 +21,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Update nodejs to version `20.16.0`.
 - Update npm to version `10.8.1`.
-- Update plugin-core to version 0.27.2.
+- Update plugin-core to version `0.27.2`.
 
 ## [0.4.2] - 2024/08/02
 
 ### Changed
 
-- Update plugin-core to version 0.26.2.
+- Update plugin-core to version `0.26.2`.
 
 ## [0.4.1] - 2024/07/11
 
@@ -40,13 +46,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Update plugin-core to version 0.25.0.
+- Update plugin-core to version `0.25.0`.
 
 ## [0.3.3] - 2024/06/20
 
 ### Changed
 
-- Update plugin-core to version 0.24.1.
+- Update plugin-core to version `0.24.1`.
 
 ## [0.3.2] - 2024/01/15
 
@@ -58,7 +64,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Update plugin-core to version 0.23.0.
+- Update plugin-core to version `0.23.0`.
 
 ## [0.3.0] - 2023/10/20
 
@@ -68,37 +74,37 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Update plugin-core to version 0.22.0.
+- Update plugin-core to version `0.22.0`.
 
 ## [0.2.5] - 2023/09/11
 
 ### Changed
 
-- Update to plugin-core version 0.21.0.
+- Update to plugin-core version `0.21.0`.
 
 ## [0.2.4] - 2023/08/30
 
 ### Changed
 
-- Update to plugin-core version 0.20.0.
+- Update to plugin-core version `0.20.0`.
 
 ## [0.2.3] - 2023/08/16
 
 ### Changed
 
-- Update to plugin-core version 0.19.0.
+- Update to plugin-core version `0.19.0`.
 
 ## [0.2.2] - 2023/07/21
 
 ### Changed
 
-- Update to plugin-core version 0.18.0.
+- Update to plugin-core version `0.18.0`.
 
 ## [0.2.1] - 2023/07/05
 
 ### Changed
 
-- Update to plugin-core version 0.17.0.
+- Update to plugin-core version `0.17.0`.
 
 ## [0.2.0] - 2023/06/06
 
@@ -109,13 +115,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Make sure that only `.yml` file in `.github/workflow` is parsable.
-- Update to plugin-core version 0.16.0.
+- Update to plugin-core version `0.16.0`.
 
 ## [0.1.1] - 2023/05/03
 
 ### Changed
 
-- Update to plugin-core version 0.15.2.
+- Update to plugin-core version `0.15.2`.
 
 ## [0.1.0] - 2023/05/03
 
