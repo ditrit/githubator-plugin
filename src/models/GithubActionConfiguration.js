@@ -48,7 +48,7 @@ class GithubActionConfiguration extends DefaultConfiguration {
         margin: 15,
         gap: 50,
       },
-      i18N: {
+      i18n: {
         'en-US': {
           displayName: 'GitHub Action',
         },
